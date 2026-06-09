@@ -1,78 +1,67 @@
 import { siteMeta, heroStats } from '@/data/portfolio'
 
-function CodeCard() {
+function MetricsCard() {
   return (
-    <div className="relative w-[340px] h-[420px]">
-      {/* Behind cards */}
-      <div
-        className="absolute inset-0 bg-bg-3 border border-border-subtle rounded-2xl opacity-30"
-        style={{ transform: 'rotate(-6deg)', top: 40, left: -40, right: 40 }}
-      />
-      <div
-        className="absolute inset-0 bg-bg-3 border border-border-subtle rounded-2xl opacity-60"
-        style={{ transform: 'rotate(-3deg)', top: 20, left: -20, right: 20 }}
+    <div className="relative w-[320px] h-[300px]">
+
+      {/* Orb central */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[160px] h-[160px] rounded-full"
+        style={{ background: 'rgba(108,99,255,0.06)' }}
       />
 
-      {/* Main card */}
-      <div className="absolute inset-0 bg-bg-3 border border-border-subtle rounded-2xl p-6 z-10">
-        {/* Traffic lights */}
-        <div className="flex gap-1.5 mb-5">
-          <div className="code-dot-r" />
-          <div className="code-dot-y" />
-          <div className="code-dot-g" />
-        </div>
+      {/* Linhas tracejadas */}
+      <svg className="absolute inset-0 pointer-events-none" width="320" height="300" viewBox="0 0 320 300" fill="none" aria-hidden="true">
+        <line x1="155" y1="148" x2="90" y2="55" stroke="rgba(108,99,255,0.1)" strokeWidth="1" strokeDasharray="4 5" />
+        <line x1="155" y1="148" x2="248" y2="125" stroke="rgba(108,99,255,0.1)" strokeWidth="1" strokeDasharray="4 5" />
+        <line x1="155" y1="148" x2="100" y2="252" stroke="rgba(108,99,255,0.1)" strokeWidth="1" strokeDasharray="4 5" />
+        <circle cx="155" cy="148" r="3.5" fill="#6c63ff" fillOpacity="0.45" />
+      </svg>
 
-        {/* Code */}
-        <div className="font-mono text-[13px] leading-[1.8]">
-          <span className="text-text-3">// api.service.ts</span>
-          <br />
-          <br />
-          <span className="text-accent-2">export const</span>{' '}
-          <span className="text-accent-3">getReport</span>{' '}
-          <span className="text-accent-2">= async</span> () {'=>'} {'{'}
-          <br />
-          &nbsp; <span className="text-text-3">// ~40% faster after optimization</span>
-          <br />
-          &nbsp; <span className="text-accent-2">const</span>{' '}
-          <span className="text-text-1">result</span>{' '}
-          <span className="text-accent-2">=</span>{' '}
-          <span className="text-accent-2">await</span> db
-          <br />
-          &nbsp;&nbsp;&nbsp; .<span className="text-accent-3">query</span>(
-          <span className="text-brand-green">'SELECT * FROM...'</span>)
-          <br />
-          &nbsp;&nbsp;&nbsp; .<span className="text-accent-3">withIndex</span>(
-          <span className="text-brand-green">'idx_financial'</span>)
-          <br />
-          &nbsp;&nbsp;&nbsp; .<span className="text-accent-3">execute</span>();
-          <br />
-          <br />
-          &nbsp; <span className="text-accent-2">return</span> {'{ '}
-          <span className="text-text-1">data</span>: result,{' '}
-          <span className="text-text-1">status</span>:{' '}
-          <span className="text-brand-amber">200</span> {'}'};
-          <br />
-          {'}'}
+      {/* Chip 1 — Query performance */}
+      <div className="absolute top-0 left-0 animate-float
+        flex items-center gap-3 px-[18px] py-[14px]
+        bg-bg-3 border border-accent/20 rounded-2xl"
+      >
+        <div className="w-9 h-9 rounded-[9px] bg-accent/15 flex items-center justify-center text-[17px] shrink-0">⚡</div>
+        <div>
+          <div className="font-syne text-[20px] font-extrabold text-accent leading-none">−40%</div>
+          <div className="text-[11px] text-text-3 mt-0.5">query response time</div>
         </div>
       </div>
 
-      {/* Float badges */}
-      <div
-        className="absolute z-20 flex items-center gap-2 bg-bg-3 border border-border rounded-lg px-4 py-2.5 text-xs font-medium whitespace-nowrap animate-float"
-        style={{ bottom: 20, right: -20 }}
+      {/* Chip 2 — Zero downtime */}
+      <div className="absolute top-[95px] right-0 animate-float-delayed
+        flex items-center gap-3 px-[18px] py-[14px]
+        bg-bg-3 border border-brand-green/20 rounded-2xl"
       >
-        <span>⚡</span>
-        Deploy:{' '}
-        <strong className="text-brand-green">8 min</strong> → CI/CD
+        <div className="w-9 h-9 rounded-[9px] bg-brand-green/10 flex items-center justify-center text-[17px] shrink-0">🛡️</div>
+        <div>
+          <div className="font-syne text-[20px] font-extrabold leading-none">
+            <span className="text-brand-green">0</span>
+            <span className="text-text-1"> downtime</span>
+          </div>
+          <div className="text-[11px] text-text-3 mt-0.5">1 ano em produção</div>
+        </div>
+        <span className="w-[7px] h-[7px] rounded-full bg-brand-green animate-pulse-dot ml-1 shrink-0" />
       </div>
-      <div
-        className="absolute z-20 flex items-center gap-2 bg-bg-3 border border-border rounded-lg px-4 py-2.5 text-xs font-medium whitespace-nowrap animate-float-delayed"
-        style={{ bottom: -20, left: -10 }}
+
+      {/* Chip 3 — Deploy */}
+      <div className="absolute bottom-0 left-5 animate-float
+        flex items-center gap-3 px-[18px] py-[14px]
+        bg-bg-3 border border-brand-amber/20 rounded-2xl"
+        style={{ animationDelay: '1.3s' }}
       >
-        <span>🧪</span>
-        Test coverage:{' '}
-        <strong className="text-accent-2">81%</strong>
+        <div className="w-9 h-9 rounded-[9px] bg-brand-amber/10 flex items-center justify-center text-[17px] shrink-0">🚀</div>
+        <div>
+          <div className="font-syne text-[20px] font-extrabold leading-none">
+            <span className="text-text-3 text-sm font-normal">45 → </span>
+            <span className="text-brand-amber">8</span>
+            <span className="text-brand-amber text-[13px] font-normal"> min</span>
+          </div>
+          <div className="text-[11px] text-text-3 mt-0.5">deploy via CI/CD</div>
+        </div>
       </div>
+
     </div>
   )
 }
@@ -142,7 +131,7 @@ export function HeroSection() {
 
           {/* Visual — hidden on mobile */}
           <div className="hidden md:flex justify-center items-center">
-            <CodeCard />
+            <MetricsCard />
           </div>
         </div>
       </div>
