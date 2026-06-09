@@ -1,3 +1,4 @@
+import * as LucideIcons from 'lucide-react'
 import { projects, type Project } from '@/data/portfolio'
 import { SectionHeader } from '@/components/SectionHeader'
 import { useScrollReveal } from '@/hooks/useScrollReveal'
@@ -18,18 +19,32 @@ const iconBgMap = {
   pink:   'bg-brand-pink/12',
 }
 
-// ─── STEALTH OVERLAY ────────────────────────────────────────────────────────
+const iconColorMap = {
+  purple: 'text-accent-2',
+  green:  'text-brand-green',
+  blue:   'text-accent-3',
+  pink:   'text-brand-pink',
+}
+
+// ─── DYNAMIC LUCIDE ICON ─────────────────────────────────────────────────────
+
+function Icon({ name, size = 18, className = '' }: { name: string; size?: number; className?: string }) {
+  const LucideIcon = (LucideIcons as unknown as Record<string, React.ComponentType<{ size?: number; className?: string }>>)[name]
+  if (!LucideIcon) return null
+  return <LucideIcon size={size} className={className} />
+}
+
+// ─── STEALTH PANEL ───────────────────────────────────────────────────────────
 
 function StealthPanel({ stats }: { stats: NonNullable<Project['stats']> }) {
   return (
     <div className="grid grid-cols-2 gap-3 mt-1">
 
-      {/* Lona */}
+      {/* Lona — painel escuro com textura diagonal */}
       <div
-        className="relative rounded-xl overflow-hidden flex items-center justify-center py-7 row-span-1"
+        className="relative rounded-xl overflow-hidden flex items-center justify-center py-7"
         style={{ background: 'linear-gradient(135deg, #0d0d14 0%, #13131f 100%)' }}
       >
-        {/* Textura de tecido diagonal */}
         <div
           className="absolute inset-0 pointer-events-none"
           style={{
@@ -37,32 +52,10 @@ function StealthPanel({ stats }: { stats: NonNullable<Project['stats']> }) {
               'repeating-linear-gradient(-45deg, transparent, transparent 4px, rgba(255,255,255,0.018) 4px, rgba(255,255,255,0.018) 5px)',
           }}
         />
-        {/* Reflexo sutil no topo */}
-        <div
-          className="absolute top-0 left-0 right-0 h-[1px]"
-          style={{ background: 'rgba(255,255,255,0.06)' }}
-        />
+        <div className="absolute top-0 left-0 right-0 h-[1px]" style={{ background: 'rgba(255,255,255,0.06)' }} />
         <div className="relative z-10 text-center select-none">
-          <svg
-            width="36"
-            height="36"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="rgba(255,255,255,0.15)"
-            strokeWidth="1.25"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            className="mx-auto mb-2"
-            aria-hidden="true"
-          >
-            <path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94" />
-            <path d="M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19" />
-            <line x1="1" y1="1" x2="23" y2="23" />
-          </svg>
-          <p
-            className="text-[9px] tracking-[0.18em] uppercase"
-            style={{ color: 'rgba(255,255,255,0.18)' }}
-          >
+          <Icon name="EyeOff" size={28} className="mx-auto mb-2 opacity-15 text-white" />
+          <p className="text-[9px] tracking-[0.18em] uppercase" style={{ color: 'rgba(255,255,255,0.18)' }}>
             Detalhes em breve
           </p>
         </div>
@@ -112,14 +105,12 @@ function ProjectCard({ project, delay = 0 }: { project: Project; delay?: number 
       style={{ transitionDelay: `${delay}ms` }}
     >
 
-      {/* ── Featured card layout (2-col inner grid) ── */}
+      {/* ── Featured stealth layout ── */}
       {project.featured && project.stealth ? (
         <div className="flex flex-col gap-4 md:grid md:grid-cols-[1fr_280px] md:gap-8">
 
-          {/* Left col */}
           <div className="flex flex-col gap-4">
-
-            {/* Badges row */}
+            {/* Badges */}
             <div className="flex flex-wrap items-center gap-2">
               <div className="inline-flex items-center gap-1.5 px-2.5 py-1 bg-accent/15 border border-accent/30 rounded text-[11px] text-accent-2 font-medium uppercase tracking-widest">
                 ✦ Destaque
@@ -132,10 +123,10 @@ function ProjectCard({ project, delay = 0 }: { project: Project; delay?: number 
               )}
             </div>
 
-            {/* Top row: icon + actions */}
+            {/* Icon + actions */}
             <div className="flex justify-between items-start">
-              <div className={`w-12 h-12 rounded-xl flex items-center justify-center text-[22px] ${iconBgMap[project.color ?? 'purple']}`}>
-                {project.icon}
+              <div className={`w-12 h-12 rounded-xl flex items-center justify-center ${iconBgMap[project.color ?? 'purple']}`}>
+                <Icon name={project.icon} size={22} className={iconColorMap[project.color ?? 'purple']} />
               </div>
               <div className="flex gap-2.5">
                 {project.liveUrl && (
@@ -143,66 +134,57 @@ function ProjectCard({ project, delay = 0 }: { project: Project; delay?: number 
                     href={project.liveUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-9 h-9 bg-white/4 border border-border-subtle rounded-lg flex items-center justify-center text-text-2 text-sm hover:bg-accent hover:border-accent hover:text-white transition-all duration-200"
+                    className="w-9 h-9 bg-white/4 border border-border-subtle rounded-lg flex items-center justify-center text-text-2 hover:bg-accent hover:border-accent hover:text-white transition-all duration-200"
                     title="Ver projeto"
                     onClick={(e) => e.stopPropagation()}
                   >
-                    ↗
+                    <Icon name="ExternalLink" size={14} />
                   </a>
                 )}
                 {project.privateRepo && (
                   <div
-                    className="w-9 h-9 bg-white/4 border border-border-subtle rounded-lg flex items-center justify-center text-text-3 text-sm"
+                    className="w-9 h-9 bg-white/4 border border-border-subtle rounded-lg flex items-center justify-center text-text-3"
                     title="Repositório privado"
                   >
-                    🔒
+                    <Icon name="Lock" size={14} />
                   </div>
                 )}
               </div>
             </div>
 
-            {/* Eyebrow label */}
+            {/* Eyebrow + title + description */}
             <p className="text-[11px] font-medium tracking-[0.12em] uppercase text-text-3 -mb-2">
               Projeto confidencial · SaaS
             </p>
-
-            {/* Title + description */}
             <h3 className="font-syne font-bold text-xl tracking-tight">{project.title}</h3>
             <p className="text-sm text-text-2 leading-relaxed font-light">{project.description}</p>
 
-            {/* Tech tags */}
+            {/* Tags */}
             <div className="flex flex-wrap gap-2 mt-auto pt-2">
               {project.tags.map((tag) => (
-                <span
-                  key={tag}
-                  className="px-2.5 py-1 bg-white/4 border border-border-subtle rounded text-xs text-text-3"
-                >
+                <span key={tag} className="px-2.5 py-1 bg-white/4 border border-border-subtle rounded text-xs text-text-3">
                   {tag}
                 </span>
               ))}
             </div>
           </div>
 
-          {/* Right col: lona + stats */}
-          {project.stats && (
-            <StealthPanel stats={project.stats} />
-          )}
+          {/* Lona + stats */}
+          {project.stats && <StealthPanel stats={project.stats} />}
         </div>
 
       ) : (
-        /* ── Normal card layout ── */
+        /* ── Normal card ── */
         <>
-          {/* Featured badge (non-stealth featured) */}
           {project.featured && (
             <div className="inline-flex items-center gap-1.5 px-2.5 py-1 bg-accent/15 border border-accent/30 rounded text-[11px] text-accent-2 font-medium uppercase tracking-widest self-start">
               ✦ Destaque
             </div>
           )}
 
-          {/* Top row */}
           <div className="flex justify-between items-start">
-            <div className={`w-12 h-12 rounded-xl flex items-center justify-center text-[22px] ${iconBgMap[project.color ?? 'purple']}`}>
-              {project.icon}
+            <div className={`w-12 h-12 rounded-xl flex items-center justify-center ${iconBgMap[project.color ?? 'purple']}`}>
+              <Icon name={project.icon} size={22} className={iconColorMap[project.color ?? 'purple']} />
             </div>
             <div className="flex gap-2.5">
               {project.githubUrl && (
@@ -210,11 +192,11 @@ function ProjectCard({ project, delay = 0 }: { project: Project; delay?: number 
                   href={project.githubUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-9 h-9 bg-white/4 border border-border-subtle rounded-lg flex items-center justify-center text-text-2 text-sm hover:bg-accent hover:border-accent hover:text-white transition-all duration-200"
+                  className="w-9 h-9 bg-white/4 border border-border-subtle rounded-lg flex items-center justify-center text-text-2 hover:bg-accent hover:border-accent hover:text-white transition-all duration-200"
                   title="GitHub"
                   onClick={(e) => e.stopPropagation()}
                 >
-                  ⑂
+                  <Icon name="Github" size={14} />
                 </a>
               )}
               {project.liveUrl && (
@@ -222,35 +204,30 @@ function ProjectCard({ project, delay = 0 }: { project: Project; delay?: number 
                   href={project.liveUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-9 h-9 bg-white/4 border border-border-subtle rounded-lg flex items-center justify-center text-text-2 text-sm hover:bg-accent hover:border-accent hover:text-white transition-all duration-200"
+                  className="w-9 h-9 bg-white/4 border border-border-subtle rounded-lg flex items-center justify-center text-text-2 hover:bg-accent hover:border-accent hover:text-white transition-all duration-200"
                   title="Ver demo"
                   onClick={(e) => e.stopPropagation()}
                 >
-                  ↗
+                  <Icon name="ExternalLink" size={14} />
                 </a>
               )}
               {project.privateRepo && (
                 <div
-                  className="w-9 h-9 bg-white/4 border border-border-subtle rounded-lg flex items-center justify-center text-text-3 text-sm"
+                  className="w-9 h-9 bg-white/4 border border-border-subtle rounded-lg flex items-center justify-center text-text-3"
                   title="Repositório privado"
                 >
-                  🔒
+                  <Icon name="Lock" size={14} />
                 </div>
               )}
             </div>
           </div>
 
-          {/* Content */}
           <h3 className="font-syne font-bold text-xl tracking-tight">{project.title}</h3>
           <p className="text-sm text-text-2 leading-relaxed font-light flex-1">{project.description}</p>
 
-          {/* Tags */}
           <div className="flex flex-wrap gap-2 mt-auto pt-2">
             {project.tags.map((tag) => (
-              <span
-                key={tag}
-                className="px-2.5 py-1 bg-white/4 border border-border-subtle rounded text-xs text-text-3"
-              >
+              <span key={tag} className="px-2.5 py-1 bg-white/4 border border-border-subtle rounded text-xs text-text-3">
                 {tag}
               </span>
             ))}
@@ -279,11 +256,7 @@ export function ProjectsSection() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {projects.map((project, i) => (
-            <ProjectCard
-              key={project.id}
-              project={project}
-              delay={i * 100}
-            />
+            <ProjectCard key={project.id} project={project} delay={i * 100} />
           ))}
         </div>
       </div>

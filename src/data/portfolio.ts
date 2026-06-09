@@ -5,7 +5,7 @@ export interface Project {
   title: string
   description: string
   tags: string[]
-  icon: string
+  icon: string          // Lucide icon name
   featured?: boolean
   color?: 'purple' | 'green' | 'blue' | 'pink'
   githubUrl?: string
@@ -30,7 +30,7 @@ export interface Experience {
 export interface StackCategory {
   id: string
   label: string
-  emoji: string
+  icon: string          // Lucide icon name
   color: 'purple' | 'green' | 'blue' | 'amber' | 'pink' | 'gray'
   items: string[]
 }
@@ -39,7 +39,7 @@ export interface ContactLink {
   id: string
   label: string
   value: string
-  icon: string
+  icon: string          // Lucide icon name
   href: string
 }
 
@@ -51,7 +51,7 @@ export const siteMeta = {
   tagline: 'Node.js · Java · React · TypeScript',
   location: 'São João del-Rei, MG · Brasil',
   email: 'pedrohenriquetlemos@gmail.com',
-  linkedinUrl: 'https://www.linkedin.com/in/pedrotorisulemos/',
+  linkedinUrl: 'https://linkedin.com/in/pedrotorisulemos',
   githubUrl: 'https://github.com/PedroHTLemos',
   cvUrl: '#',
   available: true,
@@ -74,22 +74,10 @@ export const aboutParagraphs = [
 ]
 
 export const aboutSkillGroups = [
-  {
-    color: 'node' as const,
-    skills: ['Node.js', 'TypeScript', 'Express', 'NestJS'],
-  },
-  {
-    color: 'java' as const,
-    skills: ['Java', 'Spring Boot', 'Spring MVC'],
-  },
-  {
-    color: 'default' as const,
-    skills: ['React', 'Next.js', 'Angular'],
-  },
-  {
-    color: 'infra' as const,
-    skills: ['Docker', 'AWS Lambda', 'CI/CD', 'SQL Server'],
-  },
+  { color: 'node'    as const, skills: ['Node.js', 'TypeScript', 'Express', 'NestJS'] },
+  { color: 'java'    as const, skills: ['Java', 'Spring Boot', 'Spring MVC'] },
+  { color: 'default' as const, skills: ['React', 'Next.js', 'Angular'] },
+  { color: 'infra'   as const, skills: ['Docker', 'AWS Lambda', 'CI/CD', 'SQL Server'] },
 ]
 
 // ─── PROJECTS ───────────────────────────────────────────────────────────────
@@ -101,7 +89,7 @@ export const projects: Project[] = [
     description:
       'Sistema completo de travel planning alimentado por IA generativa. O usuário descreve a viagem em linguagem natural e recebe roteiro dia a dia com logística, cálculo de rotas e pedágios — construído do zero como produto SaaS com múltiplos planos de assinatura.',
     tags: ['React + Vite', 'Node.js', 'PostgreSQL / PostGIS', 'Gemini 2.5', 'OSRM', 'Stripe', 'Supabase', 'Vertex AI'],
-    icon: '🗺️',
+    icon: 'Map',
     featured: true,
     color: 'purple',
     liveUrl: 'https://amillan.com.br',
@@ -110,8 +98,8 @@ export const projects: Project[] = [
     statusLabel: 'Em desenvolvimento',
     stats: [
       { value: '5.5k', label: 'cidades no autocomplete' },
-      { value: '966', label: 'pedágios mapeados' },
-      { value: '4', label: 'planos via Stripe' },
+      { value: '966',  label: 'pedágios mapeados' },
+      { value: '4',    label: 'planos via Stripe' },
     ],
   },
   {
@@ -120,7 +108,7 @@ export const projects: Project[] = [
     description:
       'Assumi um sistema com alto débito técnico (React + SQL Server) e o reestruturei do zero: eliminei 60% dos componentes acoplados, separei as camadas corretamente e melhorei o carregamento em ~35%. Entrega sem downtime, com documentação das decisões arquiteturais.',
     tags: ['React', 'SQL Server', 'Clean Architecture', 'Freelance', '2023'],
-    icon: '🔄',
+    icon: 'RefreshCw',
     color: 'green',
   },
   {
@@ -129,7 +117,7 @@ export const projects: Project[] = [
     description:
       'API REST completa com Java (Spring Boot) + Angular: autenticação JWT, CRUD completo, testes unitários e banco relacional normalizado. SOLID e Clean Architecture aplicados do início ao fim.',
     tags: ['Java', 'Spring Boot', 'Angular', 'JWT', 'Acadêmico'],
-    icon: '🏢',
+    icon: 'Building2',
     color: 'blue',
     githubUrl: '#',
   },
@@ -139,7 +127,7 @@ export const projects: Project[] = [
     description:
       'Aplicativo Android (Java) integrado a uma Alexa Skill (Node.js): integração de sistemas heterogêneos com arquitetura orientada a eventos e UX por voz. Repositório privado por restrição acadêmica.',
     tags: ['Android', 'Java', 'Node.js', 'Alexa SDK', 'TCC'],
-    icon: '🎙️',
+    icon: 'Mic',
     color: 'pink',
     privateRepo: true,
   },
@@ -149,7 +137,7 @@ export const projects: Project[] = [
     description:
       'APIs RESTful com Node.js + TypeScript para sistemas corporativos de médio porte. Zero downtime em 1 ano de estágio, queries otimizadas (−40% no tempo de resposta) e CI/CD reduzindo deploy de 45 min para 8 min.',
     tags: ['Node.js', 'TypeScript', 'Docker', 'SQL Server', 'Corporativo'],
-    icon: '⚡',
+    icon: 'Zap',
     color: 'purple',
   },
 ]
@@ -207,42 +195,56 @@ export const stackCategories: StackCategory[] = [
   {
     id: 'backend',
     label: 'Back-end',
-    emoji: '🟣',
+    icon: 'Server',
     color: 'purple',
     items: ['Node.js', 'TypeScript', 'Express', 'NestJS', 'APIs REST', 'JWT', 'SOLID'],
   },
   {
     id: 'java',
     label: 'Java',
-    emoji: '☕',
+    icon: 'Coffee',
     color: 'amber',
     items: ['Java 8+', 'Spring Boot', 'Spring MVC', 'Design Patterns', 'Clean Arch'],
   },
   {
     id: 'frontend',
     label: 'Front-end',
-    emoji: '⚛️',
+    icon: 'Monitor',
     color: 'green',
-    items: ['React', 'Next.js', 'Angular', 'JavaScript ES6+', 'HTML5 / CSS3'],
+    items: ['React', 'Vite', 'Next.js', 'Angular', 'TypeScript', 'Tailwind CSS'],
+  },
+  {
+    id: 'ai-geo',
+    label: 'IA & Geo',
+    icon: 'Brain',
+    color: 'pink',
+    items: ['Gemini 2.5 Flash', 'Vertex AI', 'PostGIS', 'OSRM', 'Leaflet', 'Nominatim'],
+  },
+  {
+    id: 'saas',
+    label: 'SaaS & Integrações',
+    icon: 'Layers',
+    color: 'blue',
+    items: ['Stripe', 'Supabase', 'Resend', 'Prisma ORM', 'PostgreSQL', 'MongoDB'],
   },
   {
     id: 'cloud',
     label: 'Cloud & Infra',
-    emoji: '☁️',
+    icon: 'Cloud',
     color: 'blue',
-    items: ['Docker', 'CI/CD', 'AWS Lambda', 'API Gateway', 'SNS / SQS', 'Linux'],
+    items: ['Docker', 'CI/CD', 'GitHub Actions', 'AWS Lambda', 'Vercel', 'Render'],
   },
   {
     id: 'data',
     label: 'Dados',
-    emoji: '🗄️',
+    icon: 'Database',
     color: 'pink',
-    items: ['SQL Server', 'MySQL', 'PostgreSQL', 'MongoDB'],
+    items: ['SQL Server', 'MySQL', 'PostgreSQL', 'MongoDB', 'Prisma'],
   },
   {
     id: 'practices',
     label: 'Práticas',
-    emoji: '🛠️',
+    icon: 'GitBranch',
     color: 'gray',
     items: ['TDD', 'Code Review', 'Scrum', 'Kanban', 'Git / GitHub', 'Clean Code'],
   },
@@ -255,28 +257,28 @@ export const contactLinks: ContactLink[] = [
     id: 'email',
     label: 'Email',
     value: 'pedrohenriquetlemos@gmail.com',
-    icon: '✉️',
+    icon: 'Mail',
     href: 'mailto:pedrohenriquetlemos@gmail.com',
   },
   {
     id: 'linkedin',
     label: 'LinkedIn',
-    value: 'https://www.linkedin.com/in/pedrotorisulemos/',
-    icon: '💼',
-    href: 'https://linkedin.com/in/pedro-torisu',
+    value: 'linkedin.com/in/pedro-torisu',
+    icon: 'Linkedin',
+    href: 'https://linkedin.com/in/pedrotorisulemos',
   },
   {
     id: 'github',
     label: 'GitHub',
-    value: 'https://github.com/PedroHTLemos',
-    icon: '🐙',
+    value: 'github.com/PedroHTLemos',
+    icon: 'Github',
     href: 'https://github.com/PedroHTLemos',
   },
   {
     id: 'location',
     label: 'Localização',
     value: 'São João del-Rei, MG · Brasil',
-    icon: '📍',
+    icon: 'MapPin',
     href: '#',
   },
 ]

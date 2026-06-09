@@ -6,11 +6,9 @@
   html {
     scroll-behavior: smooth;
   }
-
   body {
     @apply bg-bg text-text-1 font-dm overflow-x-hidden;
   }
-
   /* Scrollbar */
   ::-webkit-scrollbar { width: 6px; }
   ::-webkit-scrollbar-track { @apply bg-bg-2; }
@@ -29,15 +27,24 @@
     opacity: 0.4;
   }
 
-  /* Section label */
+  /* ── Section label (eyebrow) ── */
   .section-label {
     @apply font-syne text-xs font-semibold tracking-[3px] uppercase text-accent mb-3;
   }
 
-  /* Section title */
+  /*
+   * ── Section title ──
+   * Antes: tracking-tight + extrabold deixava os títulos grandes
+   * "esmagados" — letras coladas sem respiração.
+   * Fix: tracking levemente negativo (-0.02em) em vez de -0.05em,
+   * e font-bold (700) em vez de extrabold (800) nos títulos de seção.
+   * O hero h1 continua extrabold/tight pois é display puro,
+   * mas os títulos de seção (32–48px) precisam de mais espaço.
+   */
   .section-title {
-    @apply font-syne font-extrabold tracking-tight leading-[1.1] mb-4;
+    @apply font-syne font-bold leading-[1.15] mb-4;
     font-size: clamp(32px, 4vw, 48px);
+    letter-spacing: -0.02em;
   }
 
   /* Skill tag */
@@ -51,7 +58,7 @@
     @apply text-accent text-xs shrink-0 mt-[3px];
   }
 
-  /* Code card dot */
+  /* Code card dots (mantidos caso ainda usados em algum lugar) */
   .code-dot-r { @apply w-2.5 h-2.5 rounded-full bg-[#ff5f56]; }
   .code-dot-y { @apply w-2.5 h-2.5 rounded-full bg-[#ffbd2e]; }
   .code-dot-g { @apply w-2.5 h-2.5 rounded-full bg-[#27c93f]; }

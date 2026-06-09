@@ -34,26 +34,39 @@ export default {
         },
       },
       animation: {
-        'pulse-dot': 'pulseDot 2s infinite',
-        'float': 'float 3s ease-in-out infinite',
-        'float-delayed': 'float 3s ease-in-out 1s infinite',
-        'hero-in': 'heroIn 0.8s ease 0.2s forwards',
-        'fade-up': 'fadeUp 0.7s ease forwards',
+        'pulse-dot':      'pulseDot 2s infinite',
+        'float-1':        'float1 3.8s ease-in-out infinite',
+        'float-2':        'float2 4.3s ease-in-out 0.7s infinite',
+        'float-3':        'float3 3.6s ease-in-out 1.4s infinite',
+        'hero-in':        'heroIn 0.8s ease 0.2s forwards',
+        'fade-up':        'fadeUp 0.7s ease forwards',
+        'connector-draw': 'connectorDraw 1.2s ease 0.5s forwards',
       },
       keyframes: {
         pulseDot: {
           '0%, 100%': { opacity: '1', transform: 'scale(1)' },
-          '50%': { opacity: '0.5', transform: 'scale(0.8)' },
+          '50%':      { opacity: '0.5', transform: 'scale(0.8)' },
         },
-        float: {
-          '0%, 100%': { transform: 'translateY(0)' },
-          '50%': { transform: 'translateY(-8px)' },
+        float1: {
+          '0%, 100%': { transform: 'translateY(0px)' },
+          '50%':      { transform: 'translateY(-10px)' },
+        },
+        float2: {
+          '0%, 100%': { transform: 'translateY(0px)' },
+          '50%':      { transform: 'translateY(-14px)' },
+        },
+        float3: {
+          '0%, 100%': { transform: 'translateY(0px)' },
+          '50%':      { transform: 'translateY(-8px)' },
         },
         heroIn: {
           to: { opacity: '1', transform: 'translateY(0)' },
         },
         fadeUp: {
           to: { opacity: '1', transform: 'translateY(0)' },
+        },
+        connectorDraw: {
+          to: { strokeDashoffset: '0' },
         },
       },
     },
