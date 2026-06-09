@@ -1,0 +1,63 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-bg text-text-1 font-dm overflow-x-hidden;
+  }
+
+  /* Scrollbar */
+  ::-webkit-scrollbar { width: 6px; }
+  ::-webkit-scrollbar-track { @apply bg-bg-2; }
+  ::-webkit-scrollbar-thumb { @apply bg-accent/40 rounded-full; }
+  ::-webkit-scrollbar-thumb:hover { @apply bg-accent/70; }
+}
+
+@layer components {
+  /* Noise texture overlay */
+  .noise-overlay {
+    position: fixed;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+    pointer-events: none;
+    z-index: 0;
+    opacity: 0.4;
+  }
+
+  /* Section label */
+  .section-label {
+    @apply font-syne text-xs font-semibold tracking-[3px] uppercase text-accent mb-3;
+  }
+
+  /* Section title */
+  .section-title {
+    @apply font-syne font-extrabold tracking-tight leading-[1.1] mb-4;
+    font-size: clamp(32px, 4vw, 48px);
+  }
+
+  /* Skill tag */
+  .skill-tag {
+    @apply px-3 py-1.5 rounded-full text-[13px] font-normal transition-all duration-200 border;
+  }
+
+  /* Timeline bullet */
+  .timeline-point::before {
+    content: '▸';
+    @apply text-accent text-xs shrink-0 mt-[3px];
+  }
+
+  /* Code card dot */
+  .code-dot-r { @apply w-2.5 h-2.5 rounded-full bg-[#ff5f56]; }
+  .code-dot-y { @apply w-2.5 h-2.5 rounded-full bg-[#ffbd2e]; }
+  .code-dot-g { @apply w-2.5 h-2.5 rounded-full bg-[#27c93f]; }
+}
+
+@layer utilities {
+  .text-balance { text-wrap: balance; }
+  .font-light-300 { font-weight: 300; }
+}
