@@ -51,8 +51,8 @@ export const siteMeta = {
   tagline: 'Node.js · Java · React · TypeScript',
   location: 'São João del-Rei, MG · Brasil',
   email: 'pedrohenriquetlemos@gmail.com',
-  linkedinUrl: 'https://linkedin.com/in/pedro-torisu',
-  githubUrl: 'https://github.com/pedro-torisu',
+  linkedinUrl: 'https://www.linkedin.com/in/pedrotorisulemos/',
+  githubUrl: 'https://github.com/PedroHTLemos',
   cvUrl: '#',
   available: true,
 }
@@ -261,16 +261,16 @@ export const contactLinks: ContactLink[] = [
   {
     id: 'linkedin',
     label: 'LinkedIn',
-    value: 'linkedin.com/in/pedro-torisu',
+    value: 'https://www.linkedin.com/in/pedrotorisulemos/',
     icon: '💼',
     href: 'https://linkedin.com/in/pedro-torisu',
   },
   {
     id: 'github',
     label: 'GitHub',
-    value: 'github.com/pedro-torisu',
+    value: 'https://github.com/PedroHTLemos',
     icon: '🐙',
-    href: 'https://github.com/pedro-torisu',
+    href: 'https://github.com/PedroHTLemos',
   },
   {
     id: 'location',
