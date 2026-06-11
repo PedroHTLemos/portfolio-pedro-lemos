@@ -1,13 +1,6 @@
-import { aboutParagraphs, aboutSkillGroups } from '@/data/portfolio'
+import { aboutParagraphs } from '@/data/portfolio'
 import { SectionHeader } from '@/components/SectionHeader'
 import { useScrollReveal } from '@/hooks/useScrollReveal'
-
-const skillColorMap = {
-  node: 'bg-brand-green/10 border-brand-green/20 text-brand-green hover:bg-brand-green/20',
-  java: 'bg-brand-amber/10 border-brand-amber/20 text-brand-amber hover:bg-brand-amber/20',
-  infra: 'bg-accent-3/10 border-accent-3/20 text-accent-3 hover:bg-accent-3/20',
-  default: 'bg-accent/10 border-accent/20 text-accent-2 hover:bg-accent/20',
-}
 
 function ExperienceCards() {
   const ref = useScrollReveal<HTMLDivElement>()
@@ -73,22 +66,6 @@ export function AboutSection() {
                   className="text-[17px] text-text-2 leading-[1.8] font-light"
                   dangerouslySetInnerHTML={{ __html: p.replace(/<strong>/g, '<strong class="text-text-1 font-medium">') }}
                 />
-              ))}
-            </div>
-
-            {/* Skill tags */}
-            <div className="mt-10 flex flex-col gap-3">
-              {aboutSkillGroups.map(({ color, skills }) => (
-                <div key={skills[0]} className="flex flex-wrap gap-2.5">
-                  {skills.map((skill) => (
-                    <span
-                      key={skill}
-                      className={`skill-tag ${skillColorMap[color]} cursor-default`}
-                    >
-                      {skill}
-                    </span>
-                  ))}
-                </div>
               ))}
             </div>
           </div>

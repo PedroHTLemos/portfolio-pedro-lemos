@@ -73,6 +73,7 @@ export const aboutParagraphs = [
   'Fui <strong>Diretor de Projetos na Empresa Júnior Linked/UFSJ</strong>, coordenando 32 projetos web com taxa de aprovação acima de 90%. Aprendi a traduzir requisitos de negócio em soluções técnicas viáveis. Inglês C1 — confortável em documentações, PRs e times multiculturais.',
 ]
 
+
 // ─── PROJECTS ───────────────────────────────────────────────────────────────
 
 export const projects: Project[] = [
