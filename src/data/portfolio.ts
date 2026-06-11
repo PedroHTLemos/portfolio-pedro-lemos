@@ -92,7 +92,7 @@ export const projects: Project[] = [
     icon: 'Map',
     featured: true,
     color: 'purple',
-    liveUrl: 'https://amillan.com.br',
+    //liveUrl: 'https://amillan.com.br',
     privateRepo: true,
     stealth: true,
     statusLabel: 'Em desenvolvimento',
