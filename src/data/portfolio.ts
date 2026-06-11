@@ -73,13 +73,6 @@ export const aboutParagraphs = [
   'Fui <strong>Diretor de Projetos na Empresa Júnior Linked/UFSJ</strong>, coordenando 32 projetos web com taxa de aprovação acima de 90%. Aprendi a traduzir requisitos de negócio em soluções técnicas viáveis. Inglês C1 — confortável em documentações, PRs e times multiculturais.',
 ]
 
-export const aboutSkillGroups = [
-  { color: 'node'    as const, skills: ['Node.js', 'TypeScript', 'Express', 'NestJS'] },
-  { color: 'java'    as const, skills: ['Java', 'Spring Boot', 'Spring MVC'] },
-  { color: 'default' as const, skills: ['React', 'Next.js', 'Angular'] },
-  { color: 'infra'   as const, skills: ['Docker', 'AWS Lambda', 'CI/CD', 'SQL Server'] },
-]
-
 // ─── PROJECTS ───────────────────────────────────────────────────────────────
 
 export const projects: Project[] = [
