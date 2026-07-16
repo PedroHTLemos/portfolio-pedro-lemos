@@ -70,7 +70,7 @@ export function ExperienceSection() {
         <SectionHeader
           label="Experiência"
           title="Minha trajetória"
-          subtitle="De liderança na Empresa Júnior a APIs em produção — e hoje como freelancer Full Stack."
+          subtitle="De liderança na Empresa Júnior a APIs em produção, e hoje como freelancer Full Stack."
         />
 
         {/* Timeline */}

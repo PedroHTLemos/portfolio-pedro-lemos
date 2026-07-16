@@ -19,7 +19,7 @@ function MetricsCard() {
         <circle cx="150" cy="140" r="3" fill="rgba(108,99,255,0.45)" />
       </svg>
 
-      {/* Chip 1 — −40% query (top-left) */}
+      {/* Chip 1: −40% query (top-left) */}
       <div className="absolute top-0 left-0 animate-float-1 flex items-center gap-3 px-4 py-3 bg-bg-3 border border-accent/25 rounded-2xl shadow-[0_8px_32px_rgba(108,99,255,0.12)]">
         <div className="w-8 h-8 rounded-[8px] bg-accent/15 flex items-center justify-center shrink-0">
           <Zap size={14} className="text-accent" />
@@ -30,7 +30,7 @@ function MetricsCard() {
         </div>
       </div>
 
-      {/* Chip 2 — 0 downtime (right) */}
+      {/* Chip 2: 0 downtime (right) */}
       <div className="absolute top-[100px] right-0 animate-float-2 flex items-center gap-3 px-4 py-3 bg-bg-3 border border-brand-green/25 rounded-2xl shadow-[0_8px_32px_rgba(52,211,153,0.08)]">
         <div className="w-8 h-8 rounded-[8px] bg-brand-green/12 flex items-center justify-center shrink-0">
           <Shield size={14} className="text-brand-green" />
@@ -47,7 +47,7 @@ function MetricsCard() {
         </div>
       </div>
 
-      {/* Chip 3 — deploy (bottom-left) */}
+      {/* Chip 3: deploy (bottom-left) */}
       <div className="absolute bottom-0 left-4 animate-float-3 flex items-center gap-3 px-4 py-3 bg-bg-3 border border-brand-amber/25 rounded-2xl shadow-[0_8px_32px_rgba(251,191,36,0.08)]">
         <div className="w-8 h-8 rounded-[8px] bg-brand-amber/12 flex items-center justify-center shrink-0">
           <Rocket size={14} className="text-brand-amber" />
@@ -85,7 +85,7 @@ export function HeroSection() {
               Disponível para novas oportunidades
             </div>
 
-            {/* Headline — menor, tracking menos apertado, peso 700 */}
+            {/* Headline: menor, tracking menos apertado, peso 700 */}
             <h1 className="font-syne font-bold leading-[1.08] mb-5" style={{ fontSize: 'clamp(36px, 5vw, 58px)', letterSpacing: '-0.02em' }}>
               Full Stack<br />
               <span className="text-accent">Developer</span><br />
@@ -94,7 +94,7 @@ export function HeroSection() {
 
             {/* Description */}
             <p className="text-[16px] text-text-2 leading-relaxed mb-8 max-w-[460px] font-light">
-              Olá, sou <strong className="text-text-1 font-medium">{siteMeta.name}</strong> — desenvolvedor Full Stack
+              Olá, sou <strong className="text-text-1 font-medium">{siteMeta.name}</strong>, desenvolvedor Full Stack
               formado em Ciência da Computação pela UFSJ. Construo APIs, sistemas e
               interfaces que <strong className="text-text-1 font-medium">realmente funcionam em produção</strong>.{' '}
               {siteMeta.tagline}.

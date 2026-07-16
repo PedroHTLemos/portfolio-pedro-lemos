@@ -9,6 +9,9 @@
   body {
     @apply bg-bg text-text-1 font-dm overflow-x-hidden;
   }
+  :focus-visible {
+    @apply outline outline-2 outline-offset-2 outline-accent-2 rounded-sm;
+  }
   /* Scrollbar */
   ::-webkit-scrollbar { width: 6px; }
   ::-webkit-scrollbar-track { @apply bg-bg-2; }
@@ -35,7 +38,7 @@
   /*
    * ── Section title ──
    * Antes: tracking-tight + extrabold deixava os títulos grandes
-   * "esmagados" — letras coladas sem respiração.
+   * "esmagados": letras coladas sem respiração.
    * Fix: tracking levemente negativo (-0.02em) em vez de -0.05em,
    * e font-bold (700) em vez de extrabold (800) nos títulos de seção.
    * O hero h1 continua extrabold/tight pois é display puro,

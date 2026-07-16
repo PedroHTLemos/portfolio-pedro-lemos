@@ -69,8 +69,8 @@ export const heroStats = [
 
 export const aboutParagraphs = [
   'Sou desenvolvedor Full Stack com formação em <strong>Ciência da Computação pela UFSJ</strong> (conclusão em 2026) e experiência real em produção. Trabalhei na <strong>dti digital</strong>, uma das maiores consultorias de tecnologia do Brasil, entregando APIs críticas com zero downtime.',
-  'Desde 2023 atuo como <strong>freelancer Full Stack</strong>, desenvolvendo soluções sob medida para clientes: refatorações, sistemas de gestão e APIs REST — sempre com foco em qualidade, arquitetura limpa e resultado mensurável.',
-  'Fui <strong>Diretor de Projetos na Empresa Júnior Linked/UFSJ</strong>, coordenando 32 projetos web com taxa de aprovação acima de 90%. Aprendi a traduzir requisitos de negócio em soluções técnicas viáveis. Inglês C1 — confortável em documentações, PRs e times multiculturais.',
+  'Desde 2023 atuo como <strong>freelancer Full Stack</strong>, desenvolvendo soluções sob medida para clientes: refatorações, sistemas de gestão e APIs REST, sempre com foco em qualidade, arquitetura limpa e resultado mensurável.',
+  'Fui <strong>Diretor de Projetos na Empresa Júnior Linked/UFSJ</strong>, coordenando 32 projetos web com taxa de aprovação acima de 90%. Aprendi a traduzir requisitos de negócio em soluções técnicas viáveis. Inglês C1: confortável em documentações, PRs e times multiculturais.',
 ]
 
 
@@ -78,23 +78,35 @@ export const aboutParagraphs = [
 
 export const projects: Project[] = [
   {
-    id: 'stealth-saas',
-    title: 'Plataforma SaaS de Planejamento com IA',
+    id: 'amillan',
+    title: 'Amillan · SaaS de Planejamento de Viagens com IA',
     description:
-      'Sistema completo de travel planning alimentado por IA generativa. O usuário descreve a viagem em linguagem natural e recebe roteiro dia a dia com logística, cálculo de rotas e pedágios — construído do zero como produto SaaS com múltiplos planos de assinatura.',
-    tags: ['React + Vite', 'Node.js', 'PostgreSQL / PostGIS', 'Gemini 2.5', 'OSRM', 'Stripe', 'Supabase', 'Vertex AI'],
+      'Plataforma SaaS brasileira de planejamento de viagens com IA: o usuário descreve a viagem em linguagem natural e recebe um roteiro completo dia a dia (hospedagem, atrações, logística, cálculo de rotas e estimativa de pedágios) integrado a plataformas de reserva. Três fluxos de geração (chat com IA, Road Trip com estimativa de combustível/pedágios via 966 postos indexados em PostGIS, e descoberta de destino por IA), roteamento real via OSRM + PostGIS e roteador de modelo de IA por plano (Gemini 2.5 Flash / DeepSeek com fallback automático). Inclui pagamentos via Stripe, painéis Business e Concierge, app mobile via Capacitor e conformidade com a LGPD.',
+    tags: ['React + Vite', 'TypeScript', 'Tailwind CSS', 'Node.js + Express', 'PostgreSQL / PostGIS', 'Prisma', 'Gemini 2.5 + DeepSeek', 'OSRM + Leaflet', 'Stripe', 'Capacitor'],
     icon: 'Map',
     featured: true,
     color: 'purple',
-    //liveUrl: 'https://amillan.com.br',
-    privateRepo: true,
-    stealth: true,
-    statusLabel: 'Em desenvolvimento',
-    stats: [
-      { value: '5.5k', label: 'cidades no autocomplete' },
-      { value: '966',  label: 'pedágios mapeados' },
-      { value: '4',    label: 'planos via Stripe' },
-    ],
+    liveUrl: 'https://amillan.com.br',
+  },
+  {
+    id: 'high-performance-patterns',
+    title: 'API Gateway · High-Performance Patterns',
+    description:
+      'Serviço de API Gateway com FastAPI e Redis, priorizando profundidade de infraestrutura e corretude algorítmica em vez de lógica de CRUD. Rate limiting configurável entre Fixed Window e Sliding Window Log, cache-aside com lock distribuído anti-stampede e benchmark com k6: cache HIT ~14ms vs MISS ~270ms, ~19x de speedup em steady-state.',
+    tags: ['FastAPI', 'Redis', 'Python 3.12', 'Docker', 'Rate Limiting', 'ASGI Middleware', 'k6'],
+    icon: 'Gauge',
+    color: 'blue',
+    githubUrl: 'https://github.com/PedroHTLemos/high-performance-patterns-fastapi',
+  },
+  {
+    id: 'async-task-hub',
+    title: 'AsyncTask Hub · Processamento Assíncrono de Imagens',
+    description:
+      'API assíncrona de processamento de imagens com foco em padrões de infraestrutura de produção: fila distribuída via Celery, idempotência por hash SHA-256, Dead Letter Queue e graceful shutdown sem perda de tarefas em restart. Rate limiting por IP e suíte de testes automatizados com Pytest cobrindo upload, idempotência, status e ambos os caminhos de falha da DLQ.',
+    tags: ['FastAPI', 'Celery', 'Redis', 'PostgreSQL', 'SQLAlchemy', 'Pillow', 'Flower', 'Pytest'],
+    icon: 'Images',
+    color: 'green',
+    githubUrl: 'https://github.com/PedroHTLemos/async-task-hub',
   },
   {
     id: 'legacy-refactor',
@@ -127,7 +139,7 @@ export const projects: Project[] = [
   },
   {
     id: 'dti-apis',
-    title: 'APIs REST — dti digital',
+    title: 'APIs REST · dti digital',
     description:
       'APIs RESTful com Node.js + TypeScript para sistemas corporativos de médio porte. Zero downtime em 1 ano de estágio, queries otimizadas (−40% no tempo de resposta) e CI/CD reduzindo deploy de 45 min para 8 min.',
     tags: ['Node.js', 'TypeScript', 'Docker', 'SQL Server', 'Corporativo'],
@@ -147,10 +159,10 @@ export const experiences: Experience[] = [
     location: 'Remoto',
     current: true,
     points: [
-      'Desenvolvimento de sistemas web sob demanda para clientes de diferentes segmentos — do levantamento de requisitos à entrega em produção.',
+      'Desenvolvimento de sistemas web sob demanda para clientes de diferentes segmentos: do levantamento de requisitos à entrega em produção.',
       'Refatoração de sistemas legados com React + SQL Server: eliminação de débito técnico, separação de camadas e melhoria de performance.',
       'Construção de APIs REST com Node.js/TypeScript e Java (Spring Boot), com foco em Clean Architecture e boas práticas.',
-      'Gestão autônoma de projetos, prazos e comunicação direta com clientes — experiência que complementa a visão técnica com visão de produto.',
+      'Gestão autônoma de projetos, prazos e comunicação direta com clientes, experiência que complementa a visão técnica com visão de produto.',
     ],
     tags: ['Node.js', 'React', 'Java', 'Spring Boot', 'SQL Server', 'TypeScript'],
   },
@@ -161,8 +173,8 @@ export const experiences: Experience[] = [
     company: 'dti digital',
     location: 'Belo Horizonte, MG',
     points: [
-      'Desenvolvi e mantive <strong>APIs REST com Node.js + TypeScript</strong> para sistemas corporativos de médio porte — zero downtime ao longo de todo o estágio.',
-      'Otimizei queries SQL Server com profiling e índices compostos — <strong>redução de ~40% no tempo de resposta</strong> de relatórios financeiros críticos.',
+      'Desenvolvi e mantive <strong>APIs REST com Node.js + TypeScript</strong> para sistemas corporativos de médio porte: zero downtime ao longo de todo o estágio.',
+      'Otimizei queries SQL Server com profiling e índices compostos: <strong>redução de ~40% no tempo de resposta</strong> de relatórios financeiros críticos.',
       'Automatizei pipeline CI/CD com Docker, <strong>reduzindo deploy manual de 45 min para menos de 8 min</strong> e aumentando frequência de entregas do time.',
       'Conduzi <strong>+50 code reviews</strong> em Scrum, elevando cobertura de testes do time de 62% para 81%.',
     ],
@@ -176,7 +188,7 @@ export const experiences: Experience[] = [
     location: 'São João del-Rei, MG',
     points: [
       'Coordenei entrega de <strong>32 projetos web</strong> (React + APIs REST) com taxa de aprovação acima de 90%, liderando equipes de até 6 desenvolvedores.',
-      'Implantei padrão de <strong>componentização React e Clean Code</strong> — onboarding de novos membros reduziu de 3 semanas para 5 dias.',
+      'Implantei padrão de <strong>componentização React e Clean Code</strong>: onboarding de novos membros reduziu de 3 semanas para 5 dias.',
       'Atuei como interface técnica com clientes, <strong>traduzindo requisitos de negócio</strong> em soluções viáveis e priorizando entregas por impacto.',
     ],
     tags: ['React', 'APIs REST', 'Liderança', 'Clean Code', 'Kanban'],
@@ -191,7 +203,7 @@ export const stackCategories: StackCategory[] = [
     label: 'Back-end',
     icon: 'Server',
     color: 'purple',
-    items: ['Node.js', 'TypeScript', 'Express', 'NestJS', 'APIs REST', 'JWT', 'SOLID'],
+    items: ['Node.js', 'TypeScript', 'Express', 'NestJS', 'FastAPI', 'Python', 'Celery', 'APIs REST', 'JWT', 'SOLID'],
   },
   {
     id: 'java',
@@ -205,14 +217,14 @@ export const stackCategories: StackCategory[] = [
     label: 'Front-end',
     icon: 'Monitor',
     color: 'green',
-    items: ['React', 'Vite', 'Next.js', 'Angular', 'TypeScript', 'Tailwind CSS'],
+    items: ['React', 'Vite', 'Next.js', 'Angular', 'TypeScript', 'Tailwind CSS', 'Capacitor'],
   },
   {
     id: 'ai-geo',
     label: 'IA & Geo',
     icon: 'Brain',
     color: 'pink',
-    items: ['Gemini 2.5 Flash', 'Vertex AI', 'PostGIS', 'OSRM', 'Leaflet', 'Nominatim'],
+    items: ['Gemini 2.5 Flash', 'Vertex AI', 'DeepSeek', 'PostGIS', 'OSRM', 'Leaflet', 'Nominatim'],
   },
   {
     id: 'saas',
@@ -233,7 +245,7 @@ export const stackCategories: StackCategory[] = [
     label: 'Dados',
     icon: 'Database',
     color: 'pink',
-    items: ['SQL Server', 'MySQL', 'PostgreSQL', 'MongoDB', 'Prisma'],
+    items: ['SQL Server', 'MySQL', 'PostgreSQL', 'MongoDB', 'Redis', 'Prisma'],
   },
   {
     id: 'practices',

@@ -75,7 +75,7 @@ export function StackSection() {
         <SectionHeader
           label="Tech Stack"
           title="Ferramentas do ofício"
-          subtitle="O que eu uso para construir software de qualidade — do backend ao produto."
+          subtitle="O que eu uso para construir software de qualidade: do backend ao produto."
         />
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">

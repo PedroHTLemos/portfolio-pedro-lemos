@@ -26,7 +26,7 @@ export default {
         text: {
           1: '#f0f0f8',
           2: '#9090aa',
-          3: '#5a5a72',
+          3: '#82829a',
         },
         border: {
           DEFAULT: 'rgba(108,99,255,0.18)',

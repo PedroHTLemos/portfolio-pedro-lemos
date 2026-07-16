@@ -1,4 +1,4 @@
-# Pedro Torisu — Portfolio
+# Pedro Torisu · Portfolio
 
 Portfólio pessoal desenvolvido em React + TypeScript + Tailwind CSS + Vite.
 
@@ -84,7 +84,7 @@ Para um formulário real, edite `ContactSection.tsx` e substitua o `handleSubmit
 
 ## 🌐 Deploy
 
-### Vercel (recomendado — gratuito)
+### Vercel (recomendado, gratuito)
 ```bash
 npm install -g vercel
 vercel

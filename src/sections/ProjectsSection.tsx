@@ -40,7 +40,7 @@ function StealthPanel({ stats }: { stats: NonNullable<Project['stats']> }) {
   return (
     <div className="grid grid-cols-2 gap-3 mt-1">
 
-      {/* Lona — painel escuro com textura diagonal */}
+      {/* Lona: painel escuro com textura diagonal */}
       <div
         className="relative rounded-xl overflow-hidden flex items-center justify-center py-7"
         style={{ background: 'linear-gradient(135deg, #0d0d14 0%, #13131f 100%)' }}
@@ -134,8 +134,9 @@ function ProjectCard({ project, delay = 0 }: { project: Project; delay?: number 
                     href={project.liveUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-9 h-9 bg-white/4 border border-border-subtle rounded-lg flex items-center justify-center text-text-2 hover:bg-accent hover:border-accent hover:text-white transition-all duration-200"
+                    className="w-9 h-9 bg-white/4 border border-border-subtle rounded-lg flex items-center justify-center text-text-2 hover:bg-accent hover:border-accent hover:text-white hover:scale-105 transition-all duration-200"
                     title="Ver projeto"
+                    aria-label="Ver projeto ao vivo"
                     onClick={(e) => e.stopPropagation()}
                   >
                     <Icon name="ExternalLink" size={14} />
@@ -145,6 +146,7 @@ function ProjectCard({ project, delay = 0 }: { project: Project; delay?: number 
                   <div
                     className="w-9 h-9 bg-white/4 border border-border-subtle rounded-lg flex items-center justify-center text-text-3"
                     title="Repositório privado"
+                    aria-label="Repositório privado"
                   >
                     <Icon name="Lock" size={14} />
                   </div>
@@ -192,11 +194,12 @@ function ProjectCard({ project, delay = 0 }: { project: Project; delay?: number 
                   href={project.githubUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-9 h-9 bg-white/4 border border-border-subtle rounded-lg flex items-center justify-center text-text-2 hover:bg-accent hover:border-accent hover:text-white transition-all duration-200"
-                  title="GitHub"
+                  className="w-9 h-9 bg-white/4 border border-border-subtle rounded-lg flex items-center justify-center text-text-2 hover:bg-accent hover:border-accent hover:text-white hover:scale-105 transition-all duration-200"
+                  title="Ver código-fonte"
+                  aria-label="Ver código-fonte no GitHub"
                   onClick={(e) => e.stopPropagation()}
                 >
-                  <Icon name="Github" size={14} />
+                  <Icon name="Code" size={14} />
                 </a>
               )}
               {project.liveUrl && (
@@ -204,8 +207,9 @@ function ProjectCard({ project, delay = 0 }: { project: Project; delay?: number 
                   href={project.liveUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-9 h-9 bg-white/4 border border-border-subtle rounded-lg flex items-center justify-center text-text-2 hover:bg-accent hover:border-accent hover:text-white transition-all duration-200"
+                  className="w-9 h-9 bg-white/4 border border-border-subtle rounded-lg flex items-center justify-center text-text-2 hover:bg-accent hover:border-accent hover:text-white hover:scale-105 transition-all duration-200"
                   title="Ver demo"
+                  aria-label="Ver demo ao vivo"
                   onClick={(e) => e.stopPropagation()}
                 >
                   <Icon name="ExternalLink" size={14} />
@@ -215,6 +219,7 @@ function ProjectCard({ project, delay = 0 }: { project: Project; delay?: number 
                 <div
                   className="w-9 h-9 bg-white/4 border border-border-subtle rounded-lg flex items-center justify-center text-text-3"
                   title="Repositório privado"
+                  aria-label="Repositório privado"
                 >
                   <Icon name="Lock" size={14} />
                 </div>
@@ -251,7 +256,7 @@ export function ProjectsSection() {
         <SectionHeader
           label="Projetos"
           title="O que eu construí"
-          subtitle="Projetos que me orgulho — do acadêmico ao freelance, sempre com foco em qualidade e impacto real."
+          subtitle="Projetos que me orgulho: do acadêmico ao freelance, sempre com foco em qualidade e impacto real."
         />
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
