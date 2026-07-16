@@ -25,7 +25,7 @@ function MetricsCard() {
           <Zap size={14} className="text-accent" />
         </div>
         <div>
-          <div className="font-syne text-[18px] font-extrabold text-accent leading-none tracking-tight">−40%</div>
+          <div className="font-syne text-[18px] font-extrabold text-accent-2 leading-none tracking-tight">−40%</div>
           <div className="text-[10px] text-text-3 mt-0.5">query response time</div>
         </div>
       </div>

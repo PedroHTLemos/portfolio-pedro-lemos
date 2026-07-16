@@ -70,7 +70,7 @@ function StealthPanel({ stats }: { stats: NonNullable<Project['stats']> }) {
           >
             <div className="font-syne text-[17px] font-extrabold text-text-1 leading-none">
               {value}
-              <span className="text-accent text-sm ml-0.5">+</span>
+              <span className="text-accent-2 text-sm ml-0.5">+</span>
             </div>
             <div className="text-[10px] text-text-3 mt-0.5 leading-tight">{label}</div>
           </div>
@@ -90,7 +90,7 @@ function ProjectCard({ project, delay = 0 }: { project: Project; delay?: number 
       ref={ref}
       className={`
         group relative flex flex-col gap-4 p-8 rounded-2xl border backdrop-blur-sm cursor-default
-        bg-bg-3/85 border-border-subtle
+        card-surface bg-bg-3/85 border-border-subtle
         hover:border-border hover:-translate-y-1 hover:shadow-[0_20px_60px_rgba(0,0,0,0.4)]
         transition-all duration-300
         opacity-0 translate-y-8
@@ -134,7 +134,7 @@ function ProjectCard({ project, delay = 0 }: { project: Project; delay?: number 
                     href={project.liveUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-9 h-9 bg-white/4 border border-border-subtle rounded-lg flex items-center justify-center text-text-2 hover:bg-accent hover:border-accent hover:text-white hover:scale-105 transition-all duration-200"
+                    className="w-9 h-9 bg-overlay/4 border border-border-subtle rounded-lg flex items-center justify-center text-text-2 hover:bg-accent hover:border-accent hover:text-white hover:scale-105 transition-all duration-200"
                     title="Ver projeto"
                     aria-label="Ver projeto ao vivo"
                     onClick={(e) => e.stopPropagation()}
@@ -144,7 +144,7 @@ function ProjectCard({ project, delay = 0 }: { project: Project; delay?: number 
                 )}
                 {project.privateRepo && (
                   <div
-                    className="w-9 h-9 bg-white/4 border border-border-subtle rounded-lg flex items-center justify-center text-text-3"
+                    className="w-9 h-9 bg-overlay/4 border border-border-subtle rounded-lg flex items-center justify-center text-text-3"
                     title="Repositório privado"
                     aria-label="Repositório privado"
                   >
@@ -164,7 +164,7 @@ function ProjectCard({ project, delay = 0 }: { project: Project; delay?: number 
             {/* Tags */}
             <div className="flex flex-wrap gap-2 mt-auto pt-2">
               {project.tags.map((tag) => (
-                <span key={tag} className="px-2.5 py-1 bg-white/4 border border-border-subtle rounded text-xs text-text-3">
+                <span key={tag} className="px-2.5 py-1 bg-overlay/4 border border-border-subtle rounded text-xs text-text-3">
                   {tag}
                 </span>
               ))}
@@ -194,7 +194,7 @@ function ProjectCard({ project, delay = 0 }: { project: Project; delay?: number 
                   href={project.githubUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-9 h-9 bg-white/4 border border-border-subtle rounded-lg flex items-center justify-center text-text-2 hover:bg-accent hover:border-accent hover:text-white hover:scale-105 transition-all duration-200"
+                  className="w-9 h-9 bg-overlay/4 border border-border-subtle rounded-lg flex items-center justify-center text-text-2 hover:bg-accent hover:border-accent hover:text-white hover:scale-105 transition-all duration-200"
                   title="Ver código-fonte"
                   aria-label="Ver código-fonte no GitHub"
                   onClick={(e) => e.stopPropagation()}
@@ -207,7 +207,7 @@ function ProjectCard({ project, delay = 0 }: { project: Project; delay?: number 
                   href={project.liveUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-9 h-9 bg-white/4 border border-border-subtle rounded-lg flex items-center justify-center text-text-2 hover:bg-accent hover:border-accent hover:text-white hover:scale-105 transition-all duration-200"
+                  className="w-9 h-9 bg-overlay/4 border border-border-subtle rounded-lg flex items-center justify-center text-text-2 hover:bg-accent hover:border-accent hover:text-white hover:scale-105 transition-all duration-200"
                   title="Ver demo"
                   aria-label="Ver demo ao vivo"
                   onClick={(e) => e.stopPropagation()}
@@ -217,7 +217,7 @@ function ProjectCard({ project, delay = 0 }: { project: Project; delay?: number 
               )}
               {project.privateRepo && (
                 <div
-                  className="w-9 h-9 bg-white/4 border border-border-subtle rounded-lg flex items-center justify-center text-text-3"
+                  className="w-9 h-9 bg-overlay/4 border border-border-subtle rounded-lg flex items-center justify-center text-text-3"
                   title="Repositório privado"
                   aria-label="Repositório privado"
                 >
@@ -232,7 +232,7 @@ function ProjectCard({ project, delay = 0 }: { project: Project; delay?: number 
 
           <div className="flex flex-wrap gap-2 mt-auto pt-2">
             {project.tags.map((tag) => (
-              <span key={tag} className="px-2.5 py-1 bg-white/4 border border-border-subtle rounded text-xs text-text-3">
+              <span key={tag} className="px-2.5 py-1 bg-overlay/4 border border-border-subtle rounded text-xs text-text-3">
                 {tag}
               </span>
             ))}

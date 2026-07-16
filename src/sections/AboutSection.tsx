@@ -17,7 +17,7 @@ function ExperienceCards() {
       ].map(({ company, role, period, accent }) => (
         <div
           key={company}
-          className="relative bg-bg-3/85 border border-border-subtle rounded-2xl px-7 py-6 backdrop-blur-sm hover:border-border hover:translate-x-1 transition-all duration-300 overflow-hidden"
+          className="card-surface relative bg-bg-3/85 border border-border-subtle rounded-2xl px-7 py-6 backdrop-blur-sm hover:border-border hover:translate-x-1 transition-all duration-300 overflow-hidden"
         >
           <div className={`absolute left-0 top-0 bottom-0 w-[3px] rounded-r-sm ${accent}`} />
           <div className="flex justify-between items-start">
@@ -31,7 +31,7 @@ function ExperienceCards() {
       ))}
 
       {/* Education card */}
-      <div className="bg-bg-3/85 border border-border-subtle rounded-2xl px-7 py-6 backdrop-blur-sm">
+      <div className="card-surface bg-bg-3/85 border border-border-subtle rounded-2xl px-7 py-6 backdrop-blur-sm">
         <div className="font-syne text-xs font-semibold tracking-[2px] uppercase text-text-3 mb-4">Formação</div>
         <div className="font-syne font-bold text-base">Ciência da Computação</div>
         <div className="text-sm text-text-2 font-light mt-1">Universidade Federal de São João del-Rei · UFSJ</div>

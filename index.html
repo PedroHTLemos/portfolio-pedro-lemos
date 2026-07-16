@@ -6,6 +6,21 @@
     <meta name="description" content="Pedro Torisu, Desenvolvedor Full Stack. Node.js, Java, React, TypeScript." />
     <meta name="author" content="Pedro Torisu" />
     <title>Pedro Torisu · Full Stack Developer</title>
+    <script>
+      (function () {
+        try {
+          var stored = localStorage.getItem('theme');
+          var theme = stored === 'light' || stored === 'dark' ? stored : null;
+          if (!theme) {
+            var mql = window.matchMedia && window.matchMedia('(prefers-color-scheme: light)');
+            theme = mql && mql.matches ? 'light' : 'dark';
+          }
+          document.documentElement.classList.toggle('dark', theme === 'dark');
+        } catch (e) {
+          document.documentElement.classList.add('dark');
+        }
+      })();
+    </script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link

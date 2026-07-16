@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { siteMeta } from '@/data/portfolio'
+import { ThemeToggle } from '@/components/ThemeToggle'
 
 const navLinks = [
   { href: '#sobre', label: 'Sobre' },
@@ -46,24 +47,29 @@ export function Navbar() {
         ))}
       </ul>
 
-      {/* CTA */}
-      <a
-        href={`mailto:${siteMeta.email}`}
-        className="hidden md:inline-flex px-5 py-2 bg-accent text-white rounded-lg text-sm font-medium hover:bg-accent/85 hover:-translate-y-px transition-all duration-200"
-      >
-        Vamos conversar →
-      </a>
+      {/* Right-side controls */}
+      <div className="flex items-center gap-3">
+        <ThemeToggle />
 
-      {/* Mobile menu button */}
-      <button
-        className="flex md:hidden flex-col gap-[5px] bg-transparent border-0 cursor-pointer p-2"
-        aria-label="Menu"
-        onClick={() => setMenuOpen((v) => !v)}
-      >
-        <span className={`w-[22px] h-[1.5px] bg-text-1 block transition-all duration-200 ${menuOpen ? 'rotate-45 translate-y-[6.5px]' : ''}`} />
-        <span className={`w-[22px] h-[1.5px] bg-text-1 block transition-all duration-200 ${menuOpen ? 'opacity-0' : ''}`} />
-        <span className={`w-[22px] h-[1.5px] bg-text-1 block transition-all duration-200 ${menuOpen ? '-rotate-45 -translate-y-[6.5px]' : ''}`} />
-      </button>
+        {/* CTA */}
+        <a
+          href={`mailto:${siteMeta.email}`}
+          className="hidden md:inline-flex px-5 py-2 bg-accent text-white rounded-lg text-sm font-medium hover:bg-accent/85 hover:-translate-y-px transition-all duration-200"
+        >
+          Vamos conversar →
+        </a>
+
+        {/* Mobile menu button */}
+        <button
+          className="flex md:hidden flex-col gap-[5px] bg-transparent border-0 cursor-pointer p-2"
+          aria-label="Menu"
+          onClick={() => setMenuOpen((v) => !v)}
+        >
+          <span className={`w-[22px] h-[1.5px] bg-text-1 block transition-all duration-200 ${menuOpen ? 'rotate-45 translate-y-[6.5px]' : ''}`} />
+          <span className={`w-[22px] h-[1.5px] bg-text-1 block transition-all duration-200 ${menuOpen ? 'opacity-0' : ''}`} />
+          <span className={`w-[22px] h-[1.5px] bg-text-1 block transition-all duration-200 ${menuOpen ? '-rotate-45 -translate-y-[6.5px]' : ''}`} />
+        </button>
+      </div>
 
       {/* Mobile dropdown */}
       {menuOpen && (

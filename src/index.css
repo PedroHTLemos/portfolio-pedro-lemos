@@ -3,11 +3,61 @@
 @tailwind utilities;
 
 @layer base {
+  /*
+   * Tokens semânticos de tema. .dark replica 1:1 a paleta escura original
+   * (zero regressão visual no dark mode); :root define a paleta clara.
+   * accent (DEFAULT) é a cor de marca e fica fixa nos dois temas —
+   * accent-2/3 e brand-* variam de tom para manter contraste AA em fundo claro.
+   */
+  :root {
+    --bg: 244 244 249;
+    --bg-2: 248 248 252;
+    --bg-3: 255 255 255;
+    --text-1: 21 21 31;
+    --text-2: 82 82 95;
+    --text-3: 107 107 120;
+    --border: rgba(108, 99, 255, 0.22);
+    --border-subtle: rgba(20, 20, 31, 0.08);
+    --overlay: 20 20 31;
+    --accent-2: 109 40 217;
+    --accent-3: 3 105 161;
+    --brand-green: 4 120 87;
+    --brand-pink: 190 24 93;
+    --brand-amber: 180 83 9;
+    --shadow-elevated: 0 1px 2px rgba(20, 20, 31, 0.04), 0 8px 24px rgba(20, 20, 31, 0.06);
+    color-scheme: light;
+  }
+
+  .dark {
+    --bg: 10 10 15;
+    --bg-2: 17 17 24;
+    --bg-3: 24 24 31;
+    --text-1: 240 240 248;
+    --text-2: 144 144 170;
+    --text-3: 130 130 154;
+    --border: rgba(108, 99, 255, 0.18);
+    --border-subtle: rgba(240, 240, 248, 0.07);
+    --overlay: 255 255 255;
+    --accent-2: 167 139 250;
+    --accent-3: 56 189 248;
+    --brand-green: 52 211 153;
+    --brand-pink: 244 114 182;
+    --brand-amber: 251 191 36;
+    --shadow-elevated: none;
+    color-scheme: dark;
+  }
+
   html {
     scroll-behavior: smooth;
   }
   body {
     @apply bg-bg text-text-1 font-dm overflow-x-hidden;
+  }
+  /* Transição suave de tema — cobre elementos sem transition-* próprio. */
+  *, *::before, *::after {
+    transition-property: background-color, border-color, color, fill, stroke, box-shadow;
+    transition-duration: 200ms;
+    transition-timing-function: ease;
   }
   :focus-visible {
     @apply outline outline-2 outline-offset-2 outline-accent-2 rounded-sm;
@@ -32,7 +82,13 @@
 
   /* ── Section label (eyebrow) ── */
   .section-label {
-    @apply font-syne text-xs font-semibold tracking-[3px] uppercase text-accent mb-3;
+    @apply font-syne text-xs font-semibold tracking-[3px] uppercase text-accent-2 mb-3;
+  }
+
+  /* Elevação de card — no dark o contraste natural do fundo já resolve;
+     no light, sem esse contraste, uma sombra suave separa o card da página. */
+  .card-surface {
+    box-shadow: var(--shadow-elevated);
   }
 
   /*

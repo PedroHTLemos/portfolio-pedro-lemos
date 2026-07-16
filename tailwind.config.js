@@ -1,5 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 export default {
+  darkMode: 'class',
   content: ['./index.html', './src/**/*.{ts,tsx}'],
   theme: {
     extend: {
@@ -9,29 +10,30 @@ export default {
       },
       colors: {
         bg: {
-          DEFAULT: '#0a0a0f',
-          2: '#111118',
-          3: '#18181f',
+          DEFAULT: 'rgb(var(--bg) / <alpha-value>)',
+          2: 'rgb(var(--bg-2) / <alpha-value>)',
+          3: 'rgb(var(--bg-3) / <alpha-value>)',
         },
         accent: {
           DEFAULT: '#6c63ff',
-          2: '#a78bfa',
-          3: '#38bdf8',
+          2: 'rgb(var(--accent-2) / <alpha-value>)',
+          3: 'rgb(var(--accent-3) / <alpha-value>)',
         },
         brand: {
-          green: '#34d399',
-          pink: '#f472b6',
-          amber: '#fbbf24',
+          green: 'rgb(var(--brand-green) / <alpha-value>)',
+          pink: 'rgb(var(--brand-pink) / <alpha-value>)',
+          amber: 'rgb(var(--brand-amber) / <alpha-value>)',
         },
         text: {
-          1: '#f0f0f8',
-          2: '#9090aa',
-          3: '#82829a',
+          1: 'rgb(var(--text-1) / <alpha-value>)',
+          2: 'rgb(var(--text-2) / <alpha-value>)',
+          3: 'rgb(var(--text-3) / <alpha-value>)',
         },
         border: {
-          DEFAULT: 'rgba(108,99,255,0.18)',
-          subtle: 'rgba(240,240,248,0.07)',
+          DEFAULT: 'var(--border)',
+          subtle: 'var(--border-subtle)',
         },
+        overlay: 'rgb(var(--overlay) / <alpha-value>)',
       },
       animation: {
         'pulse-dot':      'pulseDot 2s infinite',

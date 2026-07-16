@@ -39,7 +39,7 @@ function StackCard({ category, delay = 0 }: { category: StackCategory; delay?: n
   return (
     <div
       ref={ref}
-      className="bg-bg-3/85 border border-border-subtle rounded-2xl p-7 backdrop-blur-sm hover:border-border transition-all duration-300 opacity-0 translate-y-8"
+      className="card-surface bg-bg-3/85 border border-border-subtle rounded-2xl p-7 backdrop-blur-sm hover:border-border transition-all duration-300 opacity-0 translate-y-8"
       style={{ transitionDelay: `${delay}ms` }}
     >
       <div className="flex items-center gap-2 mb-5">
