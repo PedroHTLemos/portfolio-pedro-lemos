@@ -110,11 +110,11 @@ export const projects: Project[] = [
   },
   {
     id: 'legacy-refactor',
-    title: 'Refatoração Full-Stack de Sistema Legado',
+    title: 'Redesign & Internacionalização · Site Institucional B2B',
     description:
-      'Assumi um sistema com alto débito técnico (React + SQL Server) e o reestruturei do zero: eliminei 60% dos componentes acoplados, separei as camadas corretamente e melhorei o carregamento em ~35%. Entrega sem downtime, com documentação das decisões arquiteturais.',
-    tags: ['React', 'SQL Server', 'Clean Architecture', 'Freelance', '2023'],
-    icon: 'RefreshCw',
+      'Redesign completo de site institucional para indústria B2B, migrando de refatoração pontual para reconstrução ampla: novo layout responsivo em todas as páginas, sistema de tradução próprio em português, inglês e espanhol (substituindo tradução automática do navegador) com rotas dedicadas por idioma, e tradução de catálogo com 82 produtos, segmentos, departamentos e materiais de download. Painel administrativo próprio com CRUD de conteúdo, gestão de mensagens de contato e aba de revisão de traduções com exportação/importação via CSV. Corrigi também SEO multilíngue (meta tags por idioma), bug intermitente que expunha chaves de tradução em produção, e perda de idioma na navegação interna do catálogo.',
+    tags: ['Next.js 15', 'TypeScript', 'Node.js + Express', 'Supabase / PostgreSQL', 'next-i18next', 'Chakra UI', 'Framer Motion', 'Freelance', '2026'],
+    icon: 'Globe2',
     color: 'green',
   },
   {
