@@ -91,8 +91,8 @@ export const projects: Project[] = [
     id: 'high-performance-patterns',
     title: 'API Gateway · Rate Limiting e Cache',
     description:
-      'Serviço de API Gateway com FastAPI e Redis, priorizando profundidade de infraestrutura e corretude algorítmica em vez de lógica de CRUD. Rate limiting configurável entre Fixed Window e Sliding Window Log, cache-aside com lock distribuído anti-stampede e benchmark com k6: cache HIT ~14ms vs MISS ~270ms, ~19x de speedup em steady-state.',
-    tags: ['FastAPI', 'Redis', 'Python 3.12', 'Docker', 'Rate Limiting', 'ASGI Middleware', 'k6', 'Jun 2026'],
+      'Serviço de API Gateway com FastAPI e Redis, priorizando profundidade de infraestrutura e corretude algorítmica em vez de lógica de CRUD. Rate limiting configurável entre Fixed Window e Sliding Window Log, cache-aside com lock distribuído anti-stampede e benchmark com k6: cache HIT ~14ms vs MISS ~270ms, ~19x de speedup em steady-state. Operações atômicas no Redis com scripts Lua e suíte de 37 testes (pytest + fakeredis) rodando no GitHub Actions, incluindo teste de concorrência do rate limiter.',
+    tags: ['FastAPI', 'Redis', 'Lua', 'Python 3.12', 'Docker', 'Rate Limiting', 'ASGI Middleware', 'k6', 'Pytest', 'GitHub Actions', 'Jun 2026 · testes Nov 2026'],
     icon: 'Gauge',
     color: 'blue',
     githubUrl: 'https://github.com/PedroHTLemos/api-gateway-rate-limit-cache',
