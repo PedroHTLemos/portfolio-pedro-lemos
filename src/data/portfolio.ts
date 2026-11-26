@@ -84,8 +84,18 @@ export const projects: Project[] = [
     tags: ['React + Vite', 'TypeScript', 'Tailwind CSS', 'Node.js + Express', 'PostgreSQL / PostGIS', 'Prisma', 'Gemini 2.5 + DeepSeek', 'OSRM + Leaflet', 'Stripe', 'Capacitor'],
     icon: 'Map',
     featured: true,
-    color: 'purple',
+    color: 'pink',
     liveUrl: 'https://amillan.com.br',
+  },
+  {
+    id: 'orkest',
+    title: 'Orkest · Gestão de Tarefas por Equipe',
+    description:
+      'Aplicação full stack de gerenciamento de tarefas com Kanban, workspaces e permissões por papel (ADMIN/MEMBER). API em Node.js, Express, TypeScript e Prisma com PostgreSQL; front-end em React com TanStack Query e drag and drop. Autenticação JWT com rotação de refresh token. Suíte de 62 testes de integração (Jest + Supertest) contra PostgreSQL real, rodando no GitHub Actions, que expôs e corrigiu bugs de validação e de integridade.',
+    tags: ['Node.js', 'Express', 'TypeScript', 'Prisma', 'PostgreSQL', 'React', 'TanStack Query', 'JWT', 'Jest', 'Supertest', 'GitHub Actions', 'Abr 2026 · testes Nov 2026'],
+    icon: 'KanbanSquare',
+    color: 'purple',
+    githubUrl: 'https://github.com/PedroHTLemos/task-manager-api',
   },
   {
     id: 'high-performance-patterns',
