@@ -11,9 +11,9 @@ function ExperienceCards() {
       className="flex flex-col gap-5 opacity-0 translate-y-8 transition-all duration-700 delay-200"
     >
       {[
-        { company: 'Freelancer Full Stack', role: 'Desenvolvimento web autônomo', period: '2023 – presente', accent: 'bg-brand-green' },
-        { company: 'dti digital', role: 'Estagiário de Desenvolvimento de Software', period: '2022 – 2023', accent: 'bg-accent' },
-        { company: 'Linked – Empresa Júnior UFSJ', role: 'Diretor de Projetos', period: '2019 – 2022', accent: 'bg-brand-amber' },
+        { company: 'Freelancer Full Stack', role: 'Desenvolvimento web autônomo', period: 'Abr 2023 – presente', accent: 'bg-brand-green' },
+        { company: 'dti digital', role: 'Estagiário de Desenvolvimento de Software', period: 'Abr 2022 – Abr 2023', accent: 'bg-accent' },
+        { company: 'Linked – Empresa Júnior UFSJ', role: 'Diretor de Projetos', period: 'Ago 2019 – Jan 2022', accent: 'bg-brand-amber' },
       ].map(({ company, role, period, accent }) => (
         <div
           key={company}
@@ -33,9 +33,9 @@ function ExperienceCards() {
       {/* Education card */}
       <div className="card-surface bg-bg-3/85 border border-border-subtle rounded-2xl px-7 py-6 backdrop-blur-sm">
         <div className="font-syne text-xs font-semibold tracking-[2px] uppercase text-text-3 mb-4">Formação</div>
-        <div className="font-syne font-bold text-base">Ciência da Computação</div>
+        <div className="font-syne font-bold text-base">Bacharelado em Ciência da Computação</div>
         <div className="text-sm text-text-2 font-light mt-1">Universidade Federal de São João del-Rei · UFSJ</div>
-        <div className="text-xs text-accent-2 font-medium mt-2">2018 - 2026</div>
+        <div className="text-xs text-accent-2 font-medium mt-2">Ago 2018 – disciplinas concluídas em jul/2026 · colação de grau prevista para dez/2026</div>
       </div>
     </div>
   )

@@ -1,5 +1,5 @@
 import { siteMeta, heroStats } from '@/data/portfolio'
-import { Zap, Shield, Rocket } from 'lucide-react'
+import { Zap, Rocket } from 'lucide-react'
 
 function MetricsCard() {
   return (
@@ -14,7 +14,6 @@ function MetricsCard() {
       {/* Linhas conectoras */}
       <svg className="absolute inset-0 pointer-events-none" width="300" height="280" viewBox="0 0 300 280" fill="none" aria-hidden="true">
         <line x1="150" y1="140" x2="70"  y2="42"  stroke="rgba(108,99,255,0.1)" strokeWidth="1" strokeDasharray="4 5" />
-        <line x1="150" y1="140" x2="240" y2="130" stroke="rgba(108,99,255,0.1)" strokeWidth="1" strokeDasharray="4 5" />
         <line x1="150" y1="140" x2="80"  y2="248" stroke="rgba(108,99,255,0.1)" strokeWidth="1" strokeDasharray="4 5" />
         <circle cx="150" cy="140" r="3" fill="rgba(108,99,255,0.45)" />
       </svg>
@@ -27,23 +26,6 @@ function MetricsCard() {
         <div>
           <div className="font-syne text-[18px] font-extrabold text-accent-2 leading-none tracking-tight">−40%</div>
           <div className="text-[10px] text-text-3 mt-0.5">query response time</div>
-        </div>
-      </div>
-
-      {/* Chip 2: 0 downtime (right) */}
-      <div className="absolute top-[100px] right-0 animate-float-2 flex items-center gap-3 px-4 py-3 bg-bg-3 border border-brand-green/25 rounded-2xl shadow-[0_8px_32px_rgba(52,211,153,0.08)]">
-        <div className="w-8 h-8 rounded-[8px] bg-brand-green/12 flex items-center justify-center shrink-0">
-          <Shield size={14} className="text-brand-green" />
-        </div>
-        <div>
-          <div className="font-syne text-[18px] font-extrabold leading-none tracking-tight">
-            <span className="text-brand-green">0</span>
-            <span className="text-text-1"> downtime</span>
-          </div>
-          <div className="text-[10px] text-text-3 mt-0.5 flex items-center gap-1.5">
-            <span className="w-1.5 h-1.5 rounded-full bg-brand-green animate-pulse-dot inline-block" />
-            1 ano em produção
-          </div>
         </div>
       </div>
 
@@ -94,8 +76,8 @@ export function HeroSection() {
 
             {/* Description */}
             <p className="text-[16px] text-text-2 leading-relaxed mb-8 max-w-[460px] font-light">
-              Olá, sou <strong className="text-text-1 font-medium">{siteMeta.name}</strong>, desenvolvedor Full Stack
-              formado em Ciência da Computação pela UFSJ. Construo APIs, sistemas e
+              Olá, sou <strong className="text-text-1 font-medium">{siteMeta.name}</strong>, desenvolvedor Full Stack,
+              bacharelando em Ciência da Computação pela UFSJ (colação em dez/2026). Construo APIs, sistemas e
               interfaces que <strong className="text-text-1 font-medium">realmente funcionam em produção</strong>.{' '}
               {siteMeta.tagline}.
             </p>
