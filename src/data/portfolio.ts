@@ -89,20 +89,20 @@ export const projects: Project[] = [
   },
   {
     id: 'high-performance-patterns',
-    title: 'API Gateway · High-Performance Patterns',
+    title: 'API Gateway · Rate Limiting e Cache',
     description:
       'Serviço de API Gateway com FastAPI e Redis, priorizando profundidade de infraestrutura e corretude algorítmica em vez de lógica de CRUD. Rate limiting configurável entre Fixed Window e Sliding Window Log, cache-aside com lock distribuído anti-stampede e benchmark com k6: cache HIT ~14ms vs MISS ~270ms, ~19x de speedup em steady-state.',
-    tags: ['FastAPI', 'Redis', 'Python 3.12', 'Docker', 'Rate Limiting', 'ASGI Middleware', 'k6', 'Jul 2026'],
+    tags: ['FastAPI', 'Redis', 'Python 3.12', 'Docker', 'Rate Limiting', 'ASGI Middleware', 'k6', 'Jun 2026'],
     icon: 'Gauge',
     color: 'blue',
-    githubUrl: 'https://github.com/PedroHTLemos/high-performance-patterns-fastapi',
+    githubUrl: 'https://github.com/PedroHTLemos/api-gateway-rate-limit-cache',
   },
   {
     id: 'async-task-hub',
     title: 'AsyncTask Hub · Processamento Assíncrono de Imagens',
     description:
       'API assíncrona de processamento de imagens com foco em padrões de infraestrutura de produção: fila distribuída via Celery, idempotência por hash SHA-256, Dead Letter Queue e graceful shutdown sem perda de tarefas em restart. Rate limiting por IP e suíte de testes automatizados com Pytest cobrindo upload, idempotência, status e ambos os caminhos de falha da DLQ.',
-    tags: ['FastAPI', 'Celery', 'Redis', 'PostgreSQL', 'SQLAlchemy', 'Pillow', 'Flower', 'Pytest', 'Jul 2026'],
+    tags: ['FastAPI', 'Celery', 'Redis', 'PostgreSQL', 'SQLAlchemy', 'Pillow', 'Flower', 'Pytest', 'Jun 2026'],
     icon: 'Images',
     color: 'green',
     githubUrl: 'https://github.com/PedroHTLemos/async-task-hub',
@@ -120,11 +120,11 @@ export const projects: Project[] = [
     id: 'supplier-system',
     title: 'Sistema de Gestão Empresa–Fornecedor',
     description:
-      'API REST com Java 17 e Spring Boot, Spring Data JPA/Hibernate e MySQL, com front-end em Angular (TypeScript, RxJS): autenticação JWT, CRUD completo, integração com ViaCEP, testes unitários e banco relacional normalizado. Organização em camadas e tratamento global de exceções.',
-    tags: ['Java 17', 'Spring Boot', 'Spring Data JPA', 'Hibernate', 'MySQL', 'Angular', 'TypeScript', 'RxJS', 'JWT', 'ViaCEP', 'Desafio técnico'],
+      'Desafio técnico evoluído após o processo seletivo: API com Java 17 e Spring Boot (JPA, MySQL) e front-end em Angular. CRUD de empresas e fornecedores com vínculo N:N, autenticação JWT com Spring Security (stateless) e guard/interceptor no Angular, testes de integração com MockMvc para a autenticação. Consulta de CEP no ViaCEP feita pelo front-end. Arquitetura em camadas e tratamento global de exceções.',
+    tags: ['Java 17', 'Spring Boot', 'Spring Security', 'Spring Data JPA', 'Hibernate', 'MySQL', 'Angular', 'TypeScript', 'RxJS', 'JWT', 'ViaCEP', 'Desafio técnico'],
     icon: 'Building2',
     color: 'blue',
-    githubUrl: '#',
+    githubUrl: 'https://github.com/PedroHTLemos/sistema-empresa-fornecedor',
   },
   {
     id: 'alexa-app',
