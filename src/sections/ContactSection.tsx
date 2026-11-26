@@ -58,7 +58,7 @@ function ContactLinks() {
         {/* Localização */}
         <div className="flex items-center gap-1.5 ml-2 text-xs text-text-3">
           <MapPin size={12} />
-          São João del-Rei, MG · Brasil
+          Ouro Branco, MG · Brasil
         </div>
       </div>
     </div>
