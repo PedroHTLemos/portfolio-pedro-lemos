@@ -1,6 +1,7 @@
 import { useEffect } from 'react'
 import { useLocation } from 'react-router-dom'
 import type { Lang } from '@/data/types'
+import { messages } from '@/data'
 import { Layout } from '@/components/Layout'
 import { Hero } from '@/sections/Hero'
 import { About } from '@/sections/About'
@@ -19,8 +20,10 @@ export function HomePage({ lang }: { lang: Lang }) {
     document.getElementById(hash.slice(1))?.scrollIntoView({ block: 'start' })
   }, [hash])
 
+  const t = messages[lang].meta
+
   return (
-    <Layout lang={lang}>
+    <Layout lang={lang} seo={{ title: t.title, description: t.description, ptPath: '/' }}>
       <Hero lang={lang} />
       <About lang={lang} />
       <Projects lang={lang} />

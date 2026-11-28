@@ -1,9 +1,15 @@
 import { Link, useParams } from 'react-router-dom'
 import type { Lang } from '@/data/types'
-import { messages } from '@/data'
+import { messages, site } from '@/data'
 import { Layout } from '@/components/Layout'
 import { ExternalLink } from '@/components/ExternalLink'
 import { FlowDiagram } from '@/components/FlowDiagram'
+
+function truncate(text: string, max: number) {
+  if (text.length <= max) return text
+  const cut = text.slice(0, max)
+  return `${cut.slice(0, cut.lastIndexOf(' '))}…`
+}
 
 export function CaseStudyPage({ lang }: { lang: Lang }) {
   const { slug } = useParams()
@@ -11,9 +17,21 @@ export function CaseStudyPage({ lang }: { lang: Lang }) {
   const home = lang === 'pt' ? '/' : '/en'
   const project = t.projects.items.find((p) => p.slug === slug && p.caseStudy)
 
+  const seo = project
+    ? {
+        title: `${project.title} · ${site.name}`,
+        description: truncate(project.problem, 158),
+        ptPath: `/projetos/${slug}`,
+      }
+    : {
+        title: `${t.caseStudy.notFound} · ${site.name}`,
+        description: t.meta.description,
+        ptPath: `/projetos/${slug}`,
+      }
+
   if (!project || !project.caseStudy) {
     return (
-      <Layout lang={lang}>
+      <Layout lang={lang} seo={seo}>
         <section className="mx-auto max-w-content px-4 py-24 md:px-6">
           <h1 className="font-serif text-3xl font-medium text-fg">{t.caseStudy.notFound}</h1>
           <Link to={home} className="link mt-6 inline-block">
@@ -30,7 +48,7 @@ export function CaseStudyPage({ lang }: { lang: Lang }) {
   const headingClass = 'font-serif text-2xl font-medium text-fg'
 
   return (
-    <Layout lang={lang}>
+    <Layout lang={lang} seo={seo}>
       <article className="mx-auto max-w-content px-4 pb-20 pt-12 md:px-6">
         <Link to={`${home}#projetos`} className="link text-sm">
           ← {t.caseStudy.back}

@@ -1,15 +1,22 @@
-import { useEffect, type ReactNode } from 'react'
+import type { ReactNode } from 'react'
 import type { Lang } from '@/data/types'
 import { messages } from '@/data'
+import { useSeo, type SeoInput } from '@/hooks/useSeo'
 import { Navbar } from '@/components/Navbar'
 import { Footer } from '@/components/Footer'
 
-export function Layout({ lang, children }: { lang: Lang; children: ReactNode }) {
+export function Layout({
+  lang,
+  seo,
+  children,
+}: {
+  lang: Lang
+  seo: Omit<SeoInput, 'lang'>
+  children: ReactNode
+}) {
   const t = messages[lang]
 
-  useEffect(() => {
-    document.documentElement.lang = lang === 'pt' ? 'pt-BR' : 'en'
-  }, [lang])
+  useSeo({ lang, ...seo })
 
   return (
     <div className="min-h-screen">
