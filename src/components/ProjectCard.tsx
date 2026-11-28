@@ -31,7 +31,7 @@ export function ProjectCard({ project, lang }: { project: Project; lang: Lang })
 
       <div className="flex flex-1 flex-col p-6">
         <p className="text-sm text-muted">{project.period}</p>
-        <h3 id={headingId} className="mt-1 font-serif text-2xl font-medium leading-snug text-fg">
+        <h3 id={headingId} className="mt-1 font-sans tracking-[-0.03em] text-2xl font-semibold leading-snug text-fg">
           {project.title}
         </h3>
 
@@ -54,7 +54,7 @@ export function ProjectCard({ project, lang }: { project: Project; lang: Lang })
 
         <div className="mt-6 rounded-md border border-border p-4">
           <p className="text-xs font-medium uppercase tracking-[0.12em] text-muted">{t.labels.metric}</p>
-          <p className="mt-1 font-serif text-4xl font-medium text-warm">{project.metric.value}</p>
+          <p className="mt-1 font-sans tracking-[-0.03em] text-4xl font-semibold text-warm">{project.metric.value}</p>
           <p className="mt-1 text-sm text-muted">{project.metric.label}</p>
           <ExternalLink href={project.metric.sourceHref} lang={lang} className="link mt-2 inline-block text-sm">
             {project.metric.sourceLabel}

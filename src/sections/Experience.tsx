@@ -21,7 +21,7 @@ export function Experience({ lang }: { lang: Lang }) {
               {item.period}
               {item.current && <span className="ml-2 font-medium text-accent">{t.current}</span>}
             </p>
-            <h3 className="mt-1 font-serif text-xl font-medium text-fg">{item.role}</h3>
+            <h3 className="mt-1 font-sans tracking-[-0.03em] text-xl font-semibold text-fg">{item.role}</h3>
             <p className="text-[15px] text-muted">
               {item.company}
               {item.location && ` · ${item.location}`}

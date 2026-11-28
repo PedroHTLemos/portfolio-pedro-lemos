@@ -13,7 +13,7 @@ export function Others({ lang }: { lang: Lang }) {
       <ul className="mt-10 space-y-6">
         {t.items.map((item) => (
           <li key={item.title} className="border-t border-border pt-6">
-            <h3 className="font-serif text-xl font-medium text-fg">{item.title}</h3>
+            <h3 className="font-sans tracking-[-0.03em] text-xl font-semibold text-fg">{item.title}</h3>
             <p className="mt-2 max-w-3xl text-[15px] leading-relaxed text-muted">{item.description}</p>
             <ul className="mt-3 flex flex-wrap gap-1.5">
               {item.tags.map((tag) => (

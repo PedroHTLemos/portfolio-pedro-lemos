@@ -37,7 +37,7 @@ export function Stack({ lang }: { lang: Lang }) {
       <SectionTitle id="stack-titulo" eyebrow={t.eyebrow}>{t.title}</SectionTitle>
       <p className="mt-4 max-w-2xl text-muted">{t.intro}</p>
 
-      <h3 className="mt-10 font-serif text-xl font-medium text-fg">{labels.used}</h3>
+      <h3 className="mt-10 font-sans tracking-[-0.03em] text-xl font-semibold text-fg">{labels.used}</h3>
       <div className="mt-6 grid gap-x-10 gap-y-8 md:grid-cols-2 lg:grid-cols-3">
         {groups.used.map((group) => (
           <Group key={group.label} group={group} />

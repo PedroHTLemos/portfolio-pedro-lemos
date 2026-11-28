@@ -65,7 +65,7 @@ export function Navbar({ lang }: { lang: Lang }) {
       }`}
     >
       <div className="mx-auto flex max-w-content items-center justify-between gap-4 px-4 py-3 md:px-6">
-        <Link to={home} className="font-serif text-xl font-semibold text-fg">
+        <Link to={home} className="font-sans tracking-[-0.03em] text-xl font-semibold text-fg">
           {site.name}
         </Link>
 

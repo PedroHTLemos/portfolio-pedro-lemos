@@ -5,8 +5,8 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        serif: ['Newsreader', 'Georgia', 'serif'],
-        sans: ['Inter', 'system-ui', 'sans-serif'],
+        sans: ['Geist Variable', 'system-ui', 'sans-serif'],
+        mono: ['Geist Mono Variable', 'ui-monospace', 'monospace'],
       },
       colors: {
         bg: 'rgb(var(--bg) / <alpha-value>)',

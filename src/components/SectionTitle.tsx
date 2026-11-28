@@ -4,7 +4,7 @@ export function SectionTitle({ id, eyebrow, children }: { id: string; eyebrow?: 
   return (
     <>
       {eyebrow && <p className="mb-3 text-sm font-medium text-accent">{eyebrow}</p>}
-      <h2 id={id} className="font-serif text-3xl font-medium leading-tight text-fg md:text-4xl">
+      <h2 id={id} className="font-sans tracking-[-0.03em] text-3xl font-semibold leading-tight text-fg md:text-4xl">
         {children}
       </h2>
     </>
