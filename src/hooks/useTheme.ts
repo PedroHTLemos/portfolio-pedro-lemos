@@ -14,7 +14,7 @@ export function useTheme() {
     try {
       localStorage.setItem('theme', theme)
     } catch {
-      // localStorage indisponível (ex: modo privado) — tema segue funcionando na sessão
+      // localStorage indisponível (ex: modo privado): tema segue funcionando na sessão
     }
   }, [theme])
 
