@@ -57,9 +57,9 @@ export function Contact({ lang }: { lang: Lang }) {
             lang={lang}
             className="flex items-center justify-between gap-3 rounded-lg border border-border p-5 text-fg transition-colors duration-200 hover:border-accent hover:text-accent"
           >
-            <span className="flex items-center gap-3">
+            <span className="flex min-w-0 items-center gap-3">
               <LinkedinIcon width={20} height={20} />
-              <span>
+              <span className="min-w-0 break-all">
                 <span className="block text-xs uppercase tracking-[0.12em] text-muted">{t.labels.linkedin}</span>
                 {site.linkedinUrl.replace('https://', '')}
               </span>
@@ -71,9 +71,9 @@ export function Contact({ lang }: { lang: Lang }) {
             lang={lang}
             className="flex items-center justify-between gap-3 rounded-lg border border-border p-5 text-fg transition-colors duration-200 hover:border-accent hover:text-accent"
           >
-            <span className="flex items-center gap-3">
+            <span className="flex min-w-0 items-center gap-3">
               <GithubIcon width={20} height={20} />
-              <span>
+              <span className="min-w-0 break-all">
                 <span className="block text-xs uppercase tracking-[0.12em] text-muted">{t.labels.github}</span>
                 {site.githubUrl.replace('https://', '')}
               </span>
