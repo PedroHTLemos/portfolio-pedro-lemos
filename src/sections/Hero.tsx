@@ -75,7 +75,7 @@ export function Hero({ lang }: { lang: Lang }) {
                   className="group block rounded-lg border border-border bg-surface p-5 transition-colors duration-200 hover:border-accent"
                 >
                   <span className="text-sm text-muted">{p.title}</span>
-                  <span className="mt-1 block font-serif text-3xl font-medium text-accent">{p.metric.value}</span>
+                  <span className="mt-1 block font-serif text-3xl font-medium text-warm">{p.metric.value}</span>
                   <span className="mt-1 block text-sm text-muted">{p.metric.label}</span>
                   <span className="mt-3 inline-flex items-center gap-1 text-sm font-medium text-accent">
                     {messages[lang].projects.labels.caseStudy}

@@ -108,12 +108,14 @@ export interface Messages {
     highlightsTitle: string
   }
   about: {
+    eyebrow: string
     title: string
     paragraphs: string[]
     education: string
     english: string
   }
   projects: {
+    eyebrow: string
     title: string
     intro: string
     statusLabels: Record<ProjectStatus, string>
@@ -121,23 +123,27 @@ export interface Messages {
     items: Project[]
   }
   experience: {
+    eyebrow: string
     title: string
     intro: string
     current: string
     items: Experience[]
   }
   stack: {
+    eyebrow: string
     title: string
     intro: string
     groups: Stack
     labels: { used: string; known: string; academic: string; studying: string }
   }
   others: {
+    eyebrow: string
     title: string
     intro: string
     items: OtherProject[]
   }
   contact: {
+    eyebrow: string
     title: string
     intro: string
     labels: { email: string; linkedin: string; github: string; location: string }

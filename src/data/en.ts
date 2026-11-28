@@ -48,6 +48,7 @@ export const en: Messages = {
     highlightsTitle: 'Verified highlights',
   },
   about: {
+    eyebrow: '01 · About',
     title: 'About',
     paragraphs: [
       'I am a Full Stack Developer focused on back-end. I mainly work with Node.js, TypeScript and React, and use Python (FastAPI) and Java (Spring Boot) for back-end projects.',
@@ -59,6 +60,7 @@ export const en: Messages = {
     english: 'English C1: I read documentation, write PRs and work with multicultural teams.',
   },
   projects: {
+    eyebrow: '02 · Projects',
     title: 'Projects',
     intro:
       'Real products first, then portfolio projects with public code. Each number links to the section that proves it.',
@@ -540,6 +542,7 @@ export const en: Messages = {
     ],
   },
   experience: {
+    eyebrow: '03 · Experience',
     title: 'Experience',
     intro: 'Metrics confirmed by the author, for each period.',
     current: 'Current',
@@ -585,6 +588,7 @@ export const en: Messages = {
     ],
   },
   stack: {
+    eyebrow: '04 · Stack',
     title: 'Stack',
     intro: 'Grouped by level of use. Technologies I am studying are not listed as established experience.',
     labels: {
@@ -611,6 +615,7 @@ export const en: Messages = {
     },
   },
   others: {
+    eyebrow: '05 · Other projects',
     title: 'Other projects',
     intro: 'Projects with a private repository or outside the sections above.',
     items: [
@@ -623,6 +628,7 @@ export const en: Messages = {
     ],
   },
   contact: {
+    eyebrow: '06 · Contact',
     title: 'Contact',
     intro: 'If you want to talk about a role or a project, write by email or on LinkedIn.',
     labels: { email: 'Email', linkedin: 'LinkedIn', github: 'GitHub', location: 'Location' },

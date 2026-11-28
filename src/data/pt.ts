@@ -48,6 +48,7 @@ export const pt: Messages = {
     highlightsTitle: 'Destaques verificados',
   },
   about: {
+    eyebrow: '01 · Sobre',
     title: 'Sobre',
     paragraphs: [
       'Sou desenvolvedor Full Stack com foco em back-end. Trabalho principalmente com Node.js, TypeScript e React, e uso Python (FastAPI) e Java (Spring Boot) em projetos de back-end.',
@@ -59,6 +60,7 @@ export const pt: Messages = {
     english: 'Inglês C1: leio documentação, escrevo PRs e trabalho com times multiculturais.',
   },
   projects: {
+    eyebrow: '02 · Projetos',
     title: 'Projetos',
     intro:
       'Primeiro os produtos reais, depois os projetos de portfólio com código público. Cada número tem um link para a seção que o comprova.',
@@ -540,6 +542,7 @@ export const pt: Messages = {
     ],
   },
   experience: {
+    eyebrow: '03 · Experiência',
     title: 'Experiência',
     intro: 'Métricas confirmadas pelo autor, de cada período.',
     current: 'Atual',
@@ -585,6 +588,7 @@ export const pt: Messages = {
     ],
   },
   stack: {
+    eyebrow: '04 · Stack',
     title: 'Stack',
     intro: 'Agrupada por nível de uso. Tecnologias em estudo não aparecem como experiência consolidada.',
     labels: {
@@ -611,6 +615,7 @@ export const pt: Messages = {
     },
   },
   others: {
+    eyebrow: '05 · Outros projetos',
     title: 'Outros projetos',
     intro: 'Projetos com repositório privado ou fora do escopo das seções anteriores.',
     items: [
@@ -623,6 +628,7 @@ export const pt: Messages = {
     ],
   },
   contact: {
+    eyebrow: '06 · Contato',
     title: 'Contato',
     intro: 'Se quiser conversar sobre uma vaga ou um projeto, escreva por e-mail ou pelo LinkedIn.',
     labels: { email: 'E-mail', linkedin: 'LinkedIn', github: 'GitHub', location: 'Localização' },

@@ -9,8 +9,8 @@ export function Contact({ lang }: { lang: Lang }) {
   const t = messages[lang].contact
 
   return (
-    <section id="contato" aria-labelledby="contato-titulo" className="scroll-mt-24 mx-auto max-w-content px-4 py-20 md:px-6">
-      <SectionTitle id="contato-titulo">{t.title}</SectionTitle>
+    <section id="contato" aria-labelledby="contato-titulo" className="scroll-mt-24 bg-bg mx-auto max-w-content px-4 py-20 md:px-6">
+      <SectionTitle id="contato-titulo" eyebrow={t.eyebrow}>{t.title}</SectionTitle>
       <p className="mt-4 max-w-2xl text-muted">{t.intro}</p>
 
       <ul className="mt-10 grid gap-4 sm:grid-cols-2">

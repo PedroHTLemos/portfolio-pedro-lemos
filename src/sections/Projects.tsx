@@ -7,8 +7,8 @@ export function Projects({ lang }: { lang: Lang }) {
   const t = messages[lang].projects
 
   return (
-    <section id="projetos" aria-labelledby="projetos-titulo" className="scroll-mt-24 mx-auto max-w-content px-4 py-20 md:px-6">
-      <SectionTitle id="projetos-titulo">{t.title}</SectionTitle>
+    <section id="projetos" aria-labelledby="projetos-titulo" className="scroll-mt-24 bg-bg mx-auto max-w-content px-4 py-20 md:px-6">
+      <SectionTitle id="projetos-titulo" eyebrow={t.eyebrow}>{t.title}</SectionTitle>
       <p className="mt-4 max-w-2xl text-muted">{t.intro}</p>
       <div className="mt-10">
         {t.items.map((project) => (

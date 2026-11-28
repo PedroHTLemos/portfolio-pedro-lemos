@@ -7,12 +7,13 @@ export function ProjectCard({ project, lang }: { project: Project; lang: Lang })
   const t = messages[lang].projects
   const prefix = lang === 'pt' ? '' : '/en'
   const headingId = `projeto-${project.slug}`
+  const statusTone = { product: 'text-warm', portfolio: 'text-accent', freelance: 'text-green' }[project.status]
 
   return (
     <article aria-labelledby={headingId} className="grid gap-8 border-t border-border py-10 md:grid-cols-[minmax(0,1fr)_260px]">
       <div>
-        <p className="text-xs font-medium uppercase tracking-[0.12em] text-muted">
-          {t.statusLabels[project.status]} · {project.period}
+        <p className={`text-xs font-medium uppercase tracking-[0.12em] ${statusTone}`}>
+          {t.statusLabels[project.status]} <span className="text-muted">· {project.period}</span>
         </p>
         <h3 id={headingId} className="mt-2 font-serif text-2xl font-medium leading-snug text-fg">
           {project.title}
@@ -39,7 +40,7 @@ export function ProjectCard({ project, lang }: { project: Project; lang: Lang })
       <aside className="space-y-6">
         <div className="rounded-md border border-border p-5">
           <p className="text-xs font-medium uppercase tracking-[0.12em] text-muted">{t.labels.metric}</p>
-          <p className="mt-2 font-serif text-3xl font-medium text-fg">{project.metric.value}</p>
+          <p className="mt-2 font-serif text-4xl font-medium text-warm">{project.metric.value}</p>
           <p className="mt-1 text-sm text-muted">{project.metric.label}</p>
           <ExternalLink href={project.metric.sourceHref} lang={lang} className="link mt-3 inline-block text-sm">
             {project.metric.sourceLabel}

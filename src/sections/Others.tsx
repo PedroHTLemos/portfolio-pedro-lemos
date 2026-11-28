@@ -6,8 +6,8 @@ export function Others({ lang }: { lang: Lang }) {
   const t = messages[lang].others
 
   return (
-    <section id="outros" aria-labelledby="outros-titulo" className="scroll-mt-24 mx-auto max-w-content px-4 py-20 md:px-6">
-      <SectionTitle id="outros-titulo">{t.title}</SectionTitle>
+    <section id="outros" aria-labelledby="outros-titulo" className="scroll-mt-24 bg-surface mx-auto max-w-content px-4 py-20 md:px-6">
+      <SectionTitle id="outros-titulo" eyebrow={t.eyebrow}>{t.title}</SectionTitle>
       <p className="mt-4 max-w-2xl text-muted">{t.intro}</p>
 
       <ul className="mt-10 space-y-6">

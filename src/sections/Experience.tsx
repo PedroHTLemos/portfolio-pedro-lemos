@@ -6,8 +6,8 @@ export function Experience({ lang }: { lang: Lang }) {
   const t = messages[lang].experience
 
   return (
-    <section id="experiencia" aria-labelledby="experiencia-titulo" className="scroll-mt-24 mx-auto max-w-content px-4 py-20 md:px-6">
-      <SectionTitle id="experiencia-titulo">{t.title}</SectionTitle>
+    <section id="experiencia" aria-labelledby="experiencia-titulo" className="scroll-mt-24 bg-surface mx-auto max-w-content px-4 py-20 md:px-6">
+      <SectionTitle id="experiencia-titulo" eyebrow={t.eyebrow}>{t.title}</SectionTitle>
       <p className="mt-4 max-w-2xl text-muted">{t.intro}</p>
 
       <ol className="mt-10 border-l border-border">
@@ -15,7 +15,7 @@ export function Experience({ lang }: { lang: Lang }) {
           <li key={item.id} className="relative pb-12 pl-8 last:pb-0">
             <span
               aria-hidden="true"
-              className={`absolute -left-[5px] top-2 h-2.5 w-2.5 rounded-full ${item.current ? 'bg-accent' : 'border border-muted bg-bg'}`}
+              className={`absolute -left-[5px] top-2 h-2.5 w-2.5 rounded-full ${item.current ? 'bg-accent ring-4 ring-accent/20' : 'border-2 border-accent bg-bg'}`}
             />
             <p className="text-sm text-muted">
               {item.period}
