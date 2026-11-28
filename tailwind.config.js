@@ -15,8 +15,7 @@ export default {
         muted: 'rgb(var(--muted) / <alpha-value>)',
         border: 'rgb(var(--border) / <alpha-value>)',
         accent: 'rgb(var(--accent) / <alpha-value>)',
-        warm: 'rgb(var(--warm) / <alpha-value>)',
-        green: 'rgb(var(--green) / <alpha-value>)',
+        subtle: 'rgb(var(--subtle) / <alpha-value>)',
       },
       maxWidth: {
         content: '1120px',

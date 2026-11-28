@@ -16,16 +16,11 @@ export function Hero({ lang }: { lang: Lang }) {
   )
 
   return (
-    <section aria-labelledby="hero-titulo" className="relative isolate overflow-hidden">
-      {/* Textura de pontos, esmaecida para baixo */}
-      <div
-        aria-hidden="true"
-        className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(rgb(var(--border))_1px,transparent_1px)] bg-[length:24px_24px] opacity-70 [mask-image:linear-gradient(to_bottom,black_20%,transparent_85%)]"
-      />
+    <section aria-labelledby="hero-titulo" className="relative">
       <div className="mx-auto grid max-w-content gap-12 px-4 pb-20 pt-16 md:px-6 md:pt-24 lg:grid-cols-[minmax(0,1fr)_380px] lg:items-center">
         <div>
           <p className="inline-flex items-center gap-2 rounded-full border border-border bg-surface px-3 py-1 text-sm text-muted">
-            <span aria-hidden="true" className="h-2 w-2 rounded-full bg-green" />
+            <span aria-hidden="true" className="h-2 w-2 rounded-full bg-accent" />
             {t.available}
           </p>
 
@@ -59,11 +54,6 @@ export function Hero({ lang }: { lang: Lang }) {
         </div>
 
         <aside aria-labelledby="destaques-titulo" className="relative">
-          {/* Brilho radial discreto atrás do painel */}
-          <div
-            aria-hidden="true"
-            className="pointer-events-none absolute -inset-16 -z-10 bg-[radial-gradient(closest-side,rgb(var(--accent)/0.16),transparent)]"
-          />
           <h2 id="destaques-titulo" className="text-xs font-medium uppercase tracking-[0.12em] text-muted">
             {t.highlightsTitle}
           </h2>
@@ -75,7 +65,7 @@ export function Hero({ lang }: { lang: Lang }) {
                   className="group block rounded-lg border border-border bg-surface p-5 transition-colors duration-200 hover:border-accent"
                 >
                   <span className="text-sm text-muted">{p.title}</span>
-                  <span className="mt-1 block font-sans tracking-[-0.03em] text-3xl font-semibold text-warm">{p.metric.value}</span>
+                  <span className="mt-1 block font-sans tracking-[-0.03em] text-3xl font-semibold text-accent">{p.metric.value}</span>
                   <span className="mt-1 block text-sm text-muted">{p.metric.label}</span>
                   <span className="mt-3 inline-flex items-center gap-1 text-sm font-medium text-accent">
                     {messages[lang].projects.labels.caseStudy}

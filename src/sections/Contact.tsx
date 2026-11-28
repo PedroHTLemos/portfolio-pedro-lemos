@@ -26,7 +26,7 @@ export function Contact({ lang }: { lang: Lang }) {
   }
 
   return (
-    <section id="contato" aria-labelledby="contato-titulo" className="scroll-mt-24 bg-bg mx-auto max-w-content px-4 py-20 md:px-6">
+    <section id="contato" aria-labelledby="contato-titulo" className="scroll-mt-24 border-t border-border mx-auto max-w-content px-4 py-20 md:px-6">
       <SectionTitle id="contato-titulo" eyebrow={t.eyebrow}>
         {t.title}
       </SectionTitle>

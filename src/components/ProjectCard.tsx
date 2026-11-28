@@ -7,7 +7,7 @@ export function ProjectCard({ project, lang }: { project: Project; lang: Lang })
   const t = messages[lang].projects
   const prefix = lang === 'pt' ? '' : '/en'
   const headingId = `projeto-${project.slug}`
-  const statusTone = { product: 'text-warm', portfolio: 'text-accent', freelance: 'text-green' }[project.status]
+  const statusTone = { product: 'text-accent', portfolio: 'text-accent', freelance: 'text-muted' }[project.status]
 
   return (
     <article
@@ -54,7 +54,7 @@ export function ProjectCard({ project, lang }: { project: Project; lang: Lang })
 
         <div className="mt-6 rounded-md border border-border p-4">
           <p className="text-xs font-medium uppercase tracking-[0.12em] text-muted">{t.labels.metric}</p>
-          <p className="mt-1 font-sans tracking-[-0.03em] text-4xl font-semibold text-warm">{project.metric.value}</p>
+          <p className="mt-1 font-sans tracking-[-0.03em] text-4xl font-semibold text-accent">{project.metric.value}</p>
           <p className="mt-1 text-sm text-muted">{project.metric.label}</p>
           <ExternalLink href={project.metric.sourceHref} lang={lang} className="link mt-2 inline-block text-sm">
             {project.metric.sourceLabel}
