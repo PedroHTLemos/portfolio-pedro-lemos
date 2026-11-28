@@ -534,7 +534,7 @@ export const en: Messages = {
           value: '82',
           label: 'products in the catalog, with content in three languages',
           sourceLabel: 'Confirmed by the author',
-          sourceHref: site.url,
+          sourceHref: 'https://www.jwell.com.br',
         },
         stack: ['Next.js', 'TypeScript', 'Node.js', 'Express', 'Supabase', 'PostgreSQL', 'Chakra UI', 'Framer Motion', 'next-i18next'],
         liveUrl: 'https://www.jwell.com.br',
