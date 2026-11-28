@@ -3,7 +3,6 @@ import { Link, useLocation } from 'react-router-dom'
 import { Menu, X } from 'lucide-react'
 import { messages } from '@/data'
 import type { Lang } from '@/data/types'
-import { site } from '@/data/site'
 import { useScrolled } from '@/hooks/useScrolled'
 import { useActiveSection } from '@/hooks/useActiveSection'
 import { LanguageSwitch } from '@/components/LanguageSwitch'
@@ -60,13 +59,15 @@ export function Navbar({ lang }: { lang: Lang }) {
 
   return (
     <header
-      className={`sticky top-0 z-40 border-b bg-bg/80 backdrop-blur-md transition-[box-shadow,border-color] duration-200 ${
-        scrolled ? 'border-border shadow-[0_1px_12px_rgb(0_0_0/0.06)] dark:shadow-[0_1px_12px_rgb(0_0_0/0.4)]' : 'border-transparent'
+      className={`sticky top-0 z-40 border-b transition-[box-shadow,border-color,background-color,backdrop-filter] duration-200 ${
+        scrolled
+          ? 'border-border bg-bg/80 backdrop-blur-md shadow-[0_1px_12px_rgb(0_0_0/0.4)]'
+          : 'border-transparent bg-bg'
       }`}
     >
       <div className="mx-auto flex max-w-content items-center justify-between gap-4 px-4 py-3 md:px-6">
-        <Link to={home} className="font-sans tracking-[-0.03em] text-xl font-semibold text-fg">
-          {site.name}
+        <Link to={home} className="font-mono text-base font-semibold tracking-tight text-fg">
+          pedro<span className="text-accent">.</span>torisu
         </Link>
 
         <div className="flex items-center gap-2">
@@ -82,7 +83,7 @@ export function Navbar({ lang }: { lang: Lang }) {
                       }}
                       to={`${home}#${id}`}
                       aria-current={isActive ? 'location' : undefined}
-                      className={`inline-flex py-2 transition-colors duration-200 hover:text-fg ${isActive ? 'text-fg' : 'text-muted'}`}
+                      className={`inline-flex py-2 lowercase transition-colors duration-200 hover:text-fg ${isActive ? 'text-fg' : 'text-muted'}`}
                     >
                       {label}
                     </Link>
@@ -132,7 +133,7 @@ export function Navbar({ lang }: { lang: Lang }) {
                   <Link
                     to={`${home}#${id}`}
                     onClick={() => setOpen(false)}
-                    className="block py-3 text-base text-fg transition-colors hover:text-accent"
+                    className="block py-3 text-base lowercase text-fg transition-colors hover:text-accent"
                   >
                     {label}
                   </Link>
