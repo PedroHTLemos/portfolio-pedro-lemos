@@ -47,6 +47,17 @@
     border-radius: 2px;
   }
 
+  /* Entrada ao rolar: só quando o JS marcou a página (html.js) */
+  html.js .reveal {
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity 350ms ease-out, transform 350ms ease-out;
+  }
+  html.js .reveal.is-in {
+    opacity: 1;
+    transform: none;
+  }
+
   /* Sem animações: respeita a preferência do sistema */
   @media (prefers-reduced-motion: reduce) {
     *,
@@ -56,12 +67,16 @@
       animation-duration: 0.01ms !important;
       scroll-behavior: auto !important;
     }
+    html.js .reveal {
+      opacity: 1;
+      transform: none;
+    }
   }
 }
 
 @layer components {
   .btn {
-    @apply inline-flex items-center gap-2 rounded-md border border-border px-4 py-2 text-sm font-medium text-fg transition-colors hover:border-accent hover:text-accent;
+    @apply inline-flex items-center gap-2 rounded-md border border-border px-4 py-2 text-sm font-medium text-fg transition-[color,border-color,background-color,transform] duration-200 hover:border-accent hover:text-accent active:translate-y-px;
   }
 
   .btn-primary {

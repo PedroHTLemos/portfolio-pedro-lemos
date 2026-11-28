@@ -10,6 +10,7 @@ import { Experience } from '@/sections/Experience'
 import { Stack } from '@/sections/Stack'
 import { Others } from '@/sections/Others'
 import { Contact } from '@/sections/Contact'
+import { Reveal } from '@/components/Reveal'
 
 export function HomePage({ lang }: { lang: Lang }) {
   const { hash } = useLocation()
@@ -25,12 +26,24 @@ export function HomePage({ lang }: { lang: Lang }) {
   return (
     <Layout lang={lang} seo={{ title: t.title, description: t.description, ptPath: '/' }}>
       <Hero lang={lang} />
-      <About lang={lang} />
-      <Projects lang={lang} />
-      <Experience lang={lang} />
-      <Stack lang={lang} />
-      <Others lang={lang} />
-      <Contact lang={lang} />
+      <Reveal>
+        <About lang={lang} />
+      </Reveal>
+      <Reveal>
+        <Projects lang={lang} />
+      </Reveal>
+      <Reveal>
+        <Experience lang={lang} />
+      </Reveal>
+      <Reveal>
+        <Stack lang={lang} />
+      </Reveal>
+      <Reveal>
+        <Others lang={lang} />
+      </Reveal>
+      <Reveal>
+        <Contact lang={lang} />
+      </Reveal>
     </Layout>
   )
 }
