@@ -80,6 +80,10 @@ export const pt: Messages = {
       repo: 'Repositório',
       readme: 'README',
       live: 'Ver no ar',
+      appStore: 'app store',
+      playStore: 'play store',
+      appStoreAria: 'Amillan na App Store',
+      playStoreAria: 'Amillan na Play Store',
     },
     items: [
       {
@@ -118,6 +122,8 @@ export const pt: Messages = {
           'Vitest',
         ],
         liveUrl: 'https://amillan.com.br',
+        appStoreUrl: 'https://apps.apple.com/br/app/amillan/id6824982310',
+        playStoreUrl: 'https://play.google.com/store/apps/details?id=br.com.amillan',
       },
       {
         slug: 'orkest',

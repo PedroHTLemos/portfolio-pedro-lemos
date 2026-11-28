@@ -38,6 +38,8 @@ export interface Project {
   repoUrl?: string
   readmeUrl?: string
   liveUrl?: string
+  appStoreUrl?: string
+  playStoreUrl?: string
   caseStudy?: CaseStudy
 }
 
@@ -119,7 +121,7 @@ export interface Messages {
     title: string
     intro: string
     statusLabels: Record<ProjectStatus, string>
-    labels: { problem: string; built: string; decision: string; metric: string; stack: string; period: string; caseStudy: string; repo: string; readme: string; live: string }
+    labels: { problem: string; built: string; decision: string; metric: string; stack: string; period: string; caseStudy: string; repo: string; readme: string; live: string; appStore: string; playStore: string; appStoreAria: string; playStoreAria: string }
     items: Project[]
   }
   experience: {
