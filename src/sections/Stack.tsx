@@ -28,7 +28,7 @@ export function Stack({ lang }: { lang: Lang }) {
   const { groups, labels } = t
 
   return (
-    <section id="stack" aria-labelledby="stack-titulo" className="mx-auto max-w-content px-4 py-20 md:px-6">
+    <section id="stack" aria-labelledby="stack-titulo" className="scroll-mt-24 mx-auto max-w-content px-4 py-20 md:px-6">
       <SectionTitle id="stack-titulo">{t.title}</SectionTitle>
       <p className="mt-4 max-w-2xl text-muted">{t.intro}</p>
 

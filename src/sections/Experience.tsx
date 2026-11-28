@@ -6,7 +6,7 @@ export function Experience({ lang }: { lang: Lang }) {
   const t = messages[lang].experience
 
   return (
-    <section id="experiencia" aria-labelledby="experiencia-titulo" className="mx-auto max-w-content px-4 py-20 md:px-6">
+    <section id="experiencia" aria-labelledby="experiencia-titulo" className="scroll-mt-24 mx-auto max-w-content px-4 py-20 md:px-6">
       <SectionTitle id="experiencia-titulo">{t.title}</SectionTitle>
       <p className="mt-4 max-w-2xl text-muted">{t.intro}</p>
 

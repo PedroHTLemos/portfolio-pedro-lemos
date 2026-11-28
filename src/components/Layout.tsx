@@ -4,6 +4,7 @@ import { messages } from '@/data'
 import { useSeo, type SeoInput } from '@/hooks/useSeo'
 import { Navbar } from '@/components/Navbar'
 import { Footer } from '@/components/Footer'
+import { BackToTop } from '@/components/BackToTop'
 
 export function Layout({
   lang,
@@ -31,6 +32,7 @@ export function Layout({
         {children}
       </main>
       <Footer lang={lang} />
+      <BackToTop lang={lang} />
     </div>
   )
 }

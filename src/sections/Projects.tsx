@@ -7,7 +7,7 @@ export function Projects({ lang }: { lang: Lang }) {
   const t = messages[lang].projects
 
   return (
-    <section id="projetos" aria-labelledby="projetos-titulo" className="mx-auto max-w-content px-4 py-20 md:px-6">
+    <section id="projetos" aria-labelledby="projetos-titulo" className="scroll-mt-24 mx-auto max-w-content px-4 py-20 md:px-6">
       <SectionTitle id="projetos-titulo">{t.title}</SectionTitle>
       <p className="mt-4 max-w-2xl text-muted">{t.intro}</p>
       <div className="mt-10">

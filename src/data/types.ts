@@ -90,6 +90,9 @@ export interface Messages {
     location: string
     mainLabel: string
     newTab: string
+    menuOpen: string
+    menuClose: string
+    backToTop: string
   }
   hero: {
     name: string

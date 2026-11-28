@@ -28,6 +28,9 @@ export const pt: Messages = {
     location: 'Ouro Branco, MG',
     mainLabel: 'Principal',
     newTab: '(abre em nova aba)',
+    menuOpen: 'Abrir menu',
+    menuClose: 'Fechar menu',
+    backToTop: 'Voltar ao topo',
   },
   hero: {
     name: site.name,
