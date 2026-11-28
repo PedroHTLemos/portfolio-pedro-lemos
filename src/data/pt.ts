@@ -635,10 +635,12 @@ export const pt: Messages = {
   },
   contact: {
     eyebrow: '06 · Contato',
-    title: 'Contato',
+    title: 'Vamos conversar',
     intro: 'Se quiser conversar sobre uma vaga ou um projeto, escreva por e-mail ou pelo LinkedIn.',
     labels: { email: 'E-mail', linkedin: 'LinkedIn', github: 'GitHub', location: 'Localização' },
     location: 'Ouro Branco, MG · Brasil',
+    copy: 'Copiar e-mail',
+    copied: 'Copiado',
   },
   caseStudy: {
     back: 'Voltar para os projetos',

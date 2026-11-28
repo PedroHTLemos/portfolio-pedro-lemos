@@ -1,12 +1,17 @@
 import type { Lang, StackGroup } from '@/data/types'
 import { messages } from '@/data'
 import { SectionTitle } from '@/components/SectionTitle'
+import { TechIcon } from '@/components/TechIcon'
 
 function Chips({ items }: { items: string[] }) {
   return (
     <ul className="mt-3 flex flex-wrap gap-1.5">
       {items.map((item) => (
-        <li key={item} className="rounded border border-border px-2.5 py-1 text-sm text-muted">
+        <li
+          key={item}
+          className="inline-flex items-center gap-1.5 rounded border border-border px-2.5 py-1 text-sm text-muted transition-colors duration-200 hover:border-accent hover:text-fg"
+        >
+          <TechIcon name={item} />
           {item}
         </li>
       ))}

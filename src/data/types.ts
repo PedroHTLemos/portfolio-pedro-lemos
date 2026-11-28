@@ -148,6 +148,8 @@ export interface Messages {
     title: string
     intro: string
     labels: { email: string; linkedin: string; github: string; location: string }
+    copy: string
+    copied: string
     location: string
   }
   caseStudy: {

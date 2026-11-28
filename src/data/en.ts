@@ -635,10 +635,12 @@ export const en: Messages = {
   },
   contact: {
     eyebrow: '06 · Contact',
-    title: 'Contact',
+    title: "Let's talk",
     intro: 'If you want to talk about a role or a project, write by email or on LinkedIn.',
     labels: { email: 'Email', linkedin: 'LinkedIn', github: 'GitHub', location: 'Location' },
     location: 'Ouro Branco, MG · Brazil',
+    copy: 'Copy email',
+    copied: 'Copied',
   },
   caseStudy: {
     back: 'Back to projects',
