@@ -27,7 +27,7 @@ export function ProjectCard({ project, lang }: { project: Project; lang: Lang })
             {t.statusLabels[project.status]}
           </span>
         </div>
-        <p className="mt-2 line-clamp-2 text-[15px] text-muted md:line-clamp-1">{project.problem}</p>
+        <p className="mt-2 text-[15px] text-muted">{project.problem}</p>
         <p className="mt-2 font-mono text-xs lowercase text-subtle">{project.stack.join(' · ')}</p>
       </div>
       <span
