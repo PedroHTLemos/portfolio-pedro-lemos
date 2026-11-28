@@ -84,7 +84,6 @@ export const pt: Messages = {
     items: [
       {
         slug: 'amillan',
-        cover: { src: '/projetos/amillan/cover.png', alt: 'Fundo na cor da marca Amillan, com o nome do produto em minúsculas' },
         status: 'product',
         title: 'Amillan',
         period: 'Em produção',
@@ -122,7 +121,6 @@ export const pt: Messages = {
       },
       {
         slug: 'orkest',
-        cover: { src: '/projetos/orkest/cover.png', alt: 'Quadro Kanban do Orkest com tarefas em três colunas' },
         status: 'portfolio',
         title: 'Orkest',
         period: 'Abr/2026',
@@ -229,7 +227,6 @@ export const pt: Messages = {
       },
       {
         slug: 'api-pedidos-estoque',
-        cover: { src: '/projetos/api-pedidos-estoque/cover.png', alt: 'Painel da API de Pedidos e Estoque com indicadores e pedidos recentes' },
         status: 'portfolio',
         title: 'API de Pedidos e Estoque',
         period: 'Início em fev/2026',
@@ -344,7 +341,6 @@ export const pt: Messages = {
       },
       {
         slug: 'async-task-hub',
-        cover: { src: '/projetos/async-task-hub/cover.png', alt: 'Diagrama em passos do fluxo de upload: POST, PostgreSQL, Redis, worker Celery e DLQ' },
         status: 'portfolio',
         title: 'AsyncTask Hub',
         period: 'Jun/2026',
@@ -440,7 +436,6 @@ export const pt: Messages = {
       },
       {
         slug: 'api-gateway',
-        cover: { src: '/projetos/api-gateway/cover.png', alt: 'Diagrama em passos do gateway: rate limit, cache Redis, lock, API do GitHub e resposta' },
         status: 'portfolio',
         title: 'API Gateway com Rate Limiting e Cache',
         period: 'Jun/2026',
@@ -526,7 +521,6 @@ export const pt: Messages = {
       },
       {
         slug: 'site-institucional-b2b',
-        cover: { src: '/projetos/site-institucional-b2b/cover.png', alt: 'Captura da página inicial do site institucional da indústria B2B' },
         status: 'freelance',
         title: 'Site institucional para indústria B2B',
         period: 'Desde jan/2025, com manutenção contínua',

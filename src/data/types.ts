@@ -26,7 +26,6 @@ export interface CaseStudy {
 export interface Project {
   slug: string
   status: ProjectStatus
-  cover: { src: string; alt: string }
   title: string
   period: string
   problem: string
