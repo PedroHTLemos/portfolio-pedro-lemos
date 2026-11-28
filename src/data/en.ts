@@ -84,6 +84,7 @@ export const en: Messages = {
     items: [
       {
         slug: 'amillan',
+        cover: { src: '/projetos/amillan/cover.png', alt: 'Background in the Amillan brand color, with the product name in lowercase' },
         status: 'product',
         title: 'Amillan',
         period: 'In production',
@@ -121,6 +122,7 @@ export const en: Messages = {
       },
       {
         slug: 'orkest',
+        cover: { src: '/projetos/orkest/cover.png', alt: 'Orkest Kanban board with tasks in three columns' },
         status: 'portfolio',
         title: 'Orkest',
         period: 'Since Apr/2026',
@@ -227,6 +229,7 @@ export const en: Messages = {
       },
       {
         slug: 'api-pedidos-estoque',
+        cover: { src: '/projetos/api-pedidos-estoque/cover.png', alt: 'Orders and Inventory API dashboard with indicators and recent orders' },
         status: 'portfolio',
         title: 'Orders and Inventory API',
         period: 'Since Feb/2026',
@@ -341,6 +344,7 @@ export const en: Messages = {
       },
       {
         slug: 'async-task-hub',
+        cover: { src: '/projetos/async-task-hub/cover.png', alt: 'Step diagram of the upload flow: POST, PostgreSQL, Redis, Celery worker and DLQ' },
         status: 'portfolio',
         title: 'AsyncTask Hub',
         period: 'Since Jun/2026',
@@ -436,6 +440,7 @@ export const en: Messages = {
       },
       {
         slug: 'api-gateway',
+        cover: { src: '/projetos/api-gateway/cover.png', alt: 'Step diagram of the gateway: rate limit, Redis cache, lock, GitHub API and response' },
         status: 'portfolio',
         title: 'API Gateway with Rate Limiting and Cache',
         period: 'Since Jun/2026',
@@ -521,6 +526,7 @@ export const en: Messages = {
       },
       {
         slug: 'site-institucional-b2b',
+        cover: { src: '/projetos/site-institucional-b2b/cover.png', alt: 'Screenshot of the home page of the B2B manufacturer corporate website' },
         status: 'freelance',
         title: 'Corporate website for a B2B manufacturer',
         period: 'Since Jan/2025, with ongoing maintenance',

@@ -10,7 +10,7 @@ export function Projects({ lang }: { lang: Lang }) {
     <section id="projetos" aria-labelledby="projetos-titulo" className="scroll-mt-24 bg-bg mx-auto max-w-content px-4 py-20 md:px-6">
       <SectionTitle id="projetos-titulo" eyebrow={t.eyebrow}>{t.title}</SectionTitle>
       <p className="mt-4 max-w-2xl text-muted">{t.intro}</p>
-      <div className="mt-10">
+      <div className="mt-10 grid gap-6 md:grid-cols-2">
         {t.items.map((project) => (
           <ProjectCard key={project.slug} project={project} lang={lang} />
         ))}
