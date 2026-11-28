@@ -1,11 +1,18 @@
-import { siteMeta } from '@/data/portfolio'
+import type { Lang } from '@/data/types'
+import { messages, site } from '@/data'
 
-export function Footer() {
+export function Footer({ lang }: { lang: Lang }) {
+  const t = messages[lang].footer
   const year = new Date().getFullYear()
 
   return (
-    <footer className="relative z-10 border-t border-border-subtle px-5 md:px-20 py-8 flex flex-col md:flex-row justify-between items-center gap-3 text-xs text-text-3">
-      <span>© {year} {siteMeta.name} · Desenvolvedor Full Stack</span>
+    <footer className="mt-24 border-t border-border">
+      <div className="mx-auto flex max-w-content flex-wrap justify-between gap-2 px-4 py-8 text-sm text-muted md:px-6">
+        <span>
+          © {year} {site.name}. {t.rights}
+        </span>
+        <span>{t.role}</span>
+      </div>
     </footer>
   )
 }

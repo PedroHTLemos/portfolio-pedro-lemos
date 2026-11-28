@@ -88,6 +88,8 @@ export interface Messages {
     themeToDark: string
     skipToContent: string
     location: string
+    mainLabel: string
+    newTab: string
   }
   hero: {
     name: string

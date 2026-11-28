@@ -26,6 +26,8 @@ export const pt: Messages = {
     themeToDark: 'Ativar tema escuro',
     skipToContent: 'Pular para o conteúdo',
     location: 'Ouro Branco, MG',
+    mainLabel: 'Principal',
+    newTab: '(abre em nova aba)',
   },
   hero: {
     name: site.name,

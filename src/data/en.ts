@@ -26,6 +26,8 @@ export const en: Messages = {
     themeToDark: 'Switch to dark theme',
     skipToContent: 'Skip to content',
     location: 'Ouro Branco, MG',
+    mainLabel: 'Main',
+    newTab: '(opens in a new tab)',
   },
   hero: {
     name: site.name,
