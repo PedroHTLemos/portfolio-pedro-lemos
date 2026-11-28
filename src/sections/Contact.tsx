@@ -36,7 +36,7 @@ export function Contact({ lang }: { lang: Lang }) {
         <div className="flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
           <div className="min-w-0">
             <p className="text-xs font-medium uppercase tracking-[0.12em] text-muted">{t.labels.email}</p>
-            <a href={`mailto:${site.email}`} className="mt-1 block break-all font-mono text-xl text-fg transition-colors duration-200 hover:text-accent md:text-2xl">
+            <a href={`mailto:${site.email}`} className="mt-1 block break-all font-mono text-base text-fg transition-colors duration-200 hover:text-accent md:text-2xl">
               {site.email}
             </a>
           </div>
