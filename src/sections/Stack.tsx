@@ -9,7 +9,7 @@ function Chips({ items }: { items: string[] }) {
       {items.map((item) => (
         <li
           key={item}
-          className="inline-flex items-center gap-1.5 rounded border border-border px-2.5 py-1 text-sm text-muted transition-colors duration-200 hover:border-accent hover:text-fg"
+          className="group inline-flex items-center gap-1.5 rounded border border-border px-2.5 py-1 text-sm text-muted transition-colors duration-200 hover:border-accent hover:text-fg"
         >
           <TechIcon name={item} />
           {item}

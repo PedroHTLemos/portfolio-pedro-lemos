@@ -99,7 +99,7 @@ export function TechIcon({ name }: { name: string }) {
   const icon = techIcon(name)
   if (!icon) return null
   return (
-    <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" className="h-3.5 w-3.5 shrink-0 fill-accent">
+    <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" className="h-3.5 w-3.5 shrink-0 fill-current text-muted transition-colors duration-200 group-hover:text-accent">
       <path d={icon.path} />
     </svg>
   )
