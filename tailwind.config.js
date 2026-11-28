@@ -5,8 +5,8 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        sans: ['Geist Variable', 'Geist Fallback', 'system-ui', 'sans-serif'],
-        mono: ['Geist Mono Variable', 'Geist Mono Fallback', 'ui-monospace', 'monospace'],
+        sans: ['Geist Variable', 'Geist Fallback Arial', 'Geist Fallback DejaVu', 'system-ui', 'sans-serif'],
+        mono: ['Geist Mono Variable', 'Geist Mono Fallback Courier', 'Geist Mono Fallback DejaVu', 'ui-monospace', 'monospace'],
       },
       colors: {
         bg: 'rgb(var(--bg) / <alpha-value>)',

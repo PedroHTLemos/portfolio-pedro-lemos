@@ -3,20 +3,42 @@
 @tailwind utilities;
 
 /*
- * Fontes de reserva com a largura medida das variáveis do Geist, para o texto
- * não reflow quando a fonte termina de carregar (CLS). Medido: Geist é 9,25% mais
- * estreito que DejaVu Sans; Geist Mono tem 99,6% da largura da DejaVu Sans Mono.
- * Em sistemas sem essas fontes locais, a reserva não se aplica e cai no padrão.
+ * Fontes de reserva: a mesma largura e a mesma altura de linha das variáveis do Geist,
+ * para o texto não reflow quando a fonte termina de carregar (CLS).
+ *
+ * Arial e Courier New: valores calculados por scripts/fallback-metrics.mjs a partir de
+ * @capsizecss/metrics 4.4.0 (métricas publicadas de geist, geistMono, arial, courierNew).
+ * DejaVu Sans e DejaVu Sans Mono: valores medidos no navegador (Geist é 9,25% mais
+ * estreito que DejaVu Sans; Geist Mono tem 99,6% da largura da DejaVu Sans Mono).
+ * Cada reserva só se aplica se a fonte local existir. Ordem: Geist, Arial, DejaVu, padrão.
  */
 @font-face {
-  font-family: 'Geist Fallback';
+  font-family: 'Geist Fallback Arial';
+  src: local('Arial');
+  size-adjust: 104.76%;
+  ascent-override: 95.94%;
+  descent-override: 28.16%;
+  line-gap-override: 0%;
+}
+
+@font-face {
+  font-family: 'Geist Fallback DejaVu';
   src: local('DejaVu Sans');
   size-adjust: 90.8%;
 }
 
 @font-face {
-  font-family: 'Geist Mono Fallback';
-  src: local('DejaVu Sans Mono'), local('Menlo'), local('Consolas');
+  font-family: 'Geist Mono Fallback Courier';
+  src: local('Courier New');
+  size-adjust: 99.98%;
+  ascent-override: 100.52%;
+  descent-override: 29.5%;
+  line-gap-override: 0%;
+}
+
+@font-face {
+  font-family: 'Geist Mono Fallback DejaVu';
+  src: local('DejaVu Sans Mono');
   size-adjust: 99.6%;
 }
 
