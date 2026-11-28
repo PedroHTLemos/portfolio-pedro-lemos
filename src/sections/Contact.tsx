@@ -27,7 +27,7 @@ export function Contact({ lang }: { lang: Lang }) {
 
   return (
     <section id="contato" aria-labelledby="contato-titulo" className="scroll-mt-24 border-t border-border mx-auto max-w-content px-4 py-20 md:px-6">
-      <SectionTitle id="contato-titulo" eyebrow={t.eyebrow}>
+      <SectionTitle id="contato-titulo" eyebrow={t.eyebrow} large>
         {t.title}
       </SectionTitle>
       <p className="mt-4 max-w-2xl text-muted">{t.intro}</p>
@@ -36,12 +36,12 @@ export function Contact({ lang }: { lang: Lang }) {
         <div className="flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
           <div className="min-w-0">
             <p className="text-xs font-medium uppercase tracking-[0.12em] text-muted">{t.labels.email}</p>
-            <a href={`mailto:${site.email}`} className="mt-1 block break-all font-sans tracking-[-0.03em] text-2xl font-semibold text-fg hover:text-accent md:text-3xl">
+            <a href={`mailto:${site.email}`} className="mt-1 block break-all font-mono text-xl text-fg transition-colors duration-200 hover:text-accent md:text-2xl">
               {site.email}
             </a>
           </div>
           <div className="flex items-center gap-3">
-            <button type="button" onClick={copyEmail} className="btn btn-primary">
+            <button type="button" onClick={copyEmail} className="btn">
               <Mail size={16} aria-hidden="true" />
               {copied ? t.copied : t.copy}
             </button>

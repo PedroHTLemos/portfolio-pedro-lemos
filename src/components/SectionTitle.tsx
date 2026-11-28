@@ -13,7 +13,17 @@ function Eyebrow({ text }: { text: string }) {
   )
 }
 
-export function SectionTitle({ id, eyebrow, children }: { id: string; eyebrow?: string; children: ReactNode }) {
+export function SectionTitle({
+  id,
+  eyebrow,
+  large = false,
+  children,
+}: {
+  id: string
+  eyebrow?: string
+  large?: boolean
+  children: ReactNode
+}) {
   return (
     <>
       {eyebrow && (
@@ -21,7 +31,10 @@ export function SectionTitle({ id, eyebrow, children }: { id: string; eyebrow?: 
           <Eyebrow text={eyebrow} />
         </p>
       )}
-      <h2 id={id} className="font-sans text-3xl font-semibold leading-tight tracking-[-0.03em] text-fg md:text-4xl">
+      <h2
+        id={id}
+        className={`font-sans font-semibold leading-tight tracking-[-0.03em] text-fg ${large ? 'text-5xl md:text-6xl' : 'text-3xl md:text-4xl'}`}
+      >
         {children}
       </h2>
     </>
