@@ -3,30 +3,33 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Pedro Torisu, Desenvolvedor Full Stack. Node.js, TypeScript, React, Java." />
     <meta name="author" content="Pedro Torisu" />
-    <title>Pedro Torisu · Full Stack Developer</title>
+    <meta name="description" content="Pedro Torisu, desenvolvedor Full Stack com foco em back-end. Projetos com Node.js, TypeScript, Java, Python e React." />
+    <title>Pedro Torisu · Desenvolvedor Full Stack com foco em back-end</title>
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Pedro Torisu",
+        "jobTitle": "Desenvolvedor Full Stack com foco em back-end",
+        "url": "https://portfolio-pedro-lemos.vercel.app/",
+        "sameAs": ["https://github.com/PedroHTLemos", "https://linkedin.com/in/pedrotorisulemos"],
+        "address": { "@type": "PostalAddress", "addressLocality": "Ouro Branco", "addressRegion": "MG", "addressCountry": "BR" }
+      }
+    </script>
     <script>
+      document.documentElement.classList.add('js');
       (function () {
         try {
           var stored = localStorage.getItem('theme');
-          var theme = stored === 'light' || stored === 'dark' ? stored : null;
-          if (!theme) {
-            var mql = window.matchMedia && window.matchMedia('(prefers-color-scheme: light)');
-            theme = mql && mql.matches ? 'light' : 'dark';
-          }
+          var theme = stored === 'light' || stored === 'dark' ? stored : 'dark';
           document.documentElement.classList.toggle('dark', theme === 'dark');
         } catch (e) {
           document.documentElement.classList.add('dark');
         }
       })();
     </script>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap"
-      rel="stylesheet"
-    />
   </head>
   <body>
     <div id="root"></div>

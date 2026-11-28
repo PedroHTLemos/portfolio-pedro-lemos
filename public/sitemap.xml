@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>https://portfolio-pedro-lemos.vercel.app/</loc>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://portfolio-pedro-lemos.vercel.app/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://portfolio-pedro-lemos.vercel.app/en" />
+  </url>
+  <url>
+    <loc>https://portfolio-pedro-lemos.vercel.app/en</loc>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://portfolio-pedro-lemos.vercel.app/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://portfolio-pedro-lemos.vercel.app/en" />
+  </url>
+  <url>
+    <loc>https://portfolio-pedro-lemos.vercel.app/projetos/orkest</loc>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://portfolio-pedro-lemos.vercel.app/projetos/orkest" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://portfolio-pedro-lemos.vercel.app/en/projetos/orkest" />
+  </url>
+  <url>
+    <loc>https://portfolio-pedro-lemos.vercel.app/en/projetos/orkest</loc>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://portfolio-pedro-lemos.vercel.app/projetos/orkest" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://portfolio-pedro-lemos.vercel.app/en/projetos/orkest" />
+  </url>
+  <url>
+    <loc>https://portfolio-pedro-lemos.vercel.app/projetos/api-pedidos-estoque</loc>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://portfolio-pedro-lemos.vercel.app/projetos/api-pedidos-estoque" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://portfolio-pedro-lemos.vercel.app/en/projetos/api-pedidos-estoque" />
+  </url>
+  <url>
+    <loc>https://portfolio-pedro-lemos.vercel.app/en/projetos/api-pedidos-estoque</loc>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://portfolio-pedro-lemos.vercel.app/projetos/api-pedidos-estoque" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://portfolio-pedro-lemos.vercel.app/en/projetos/api-pedidos-estoque" />
+  </url>
+  <url>
+    <loc>https://portfolio-pedro-lemos.vercel.app/projetos/async-task-hub</loc>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://portfolio-pedro-lemos.vercel.app/projetos/async-task-hub" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://portfolio-pedro-lemos.vercel.app/en/projetos/async-task-hub" />
+  </url>
+  <url>
+    <loc>https://portfolio-pedro-lemos.vercel.app/en/projetos/async-task-hub</loc>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://portfolio-pedro-lemos.vercel.app/projetos/async-task-hub" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://portfolio-pedro-lemos.vercel.app/en/projetos/async-task-hub" />
+  </url>
+  <url>
+    <loc>https://portfolio-pedro-lemos.vercel.app/projetos/api-gateway</loc>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://portfolio-pedro-lemos.vercel.app/projetos/api-gateway" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://portfolio-pedro-lemos.vercel.app/en/projetos/api-gateway" />
+  </url>
+  <url>
+    <loc>https://portfolio-pedro-lemos.vercel.app/en/projetos/api-gateway</loc>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://portfolio-pedro-lemos.vercel.app/projetos/api-gateway" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://portfolio-pedro-lemos.vercel.app/en/projetos/api-gateway" />
+  </url>
+</urlset>

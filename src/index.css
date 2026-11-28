@@ -2,128 +2,138 @@
 @tailwind components;
 @tailwind utilities;
 
+/*
+ * Fontes de reserva: a mesma largura e a mesma altura de linha das variáveis do Geist,
+ * para o texto não reflow quando a fonte termina de carregar (CLS).
+ *
+ * Arial e Courier New: valores calculados por scripts/fallback-metrics.mjs a partir de
+ * @capsizecss/metrics 4.4.0 (métricas publicadas de geist, geistMono, arial, courierNew).
+ * DejaVu Sans e DejaVu Sans Mono: valores medidos no navegador (Geist é 9,25% mais
+ * estreito que DejaVu Sans; Geist Mono tem 99,6% da largura da DejaVu Sans Mono).
+ * Cada reserva só se aplica se a fonte local existir. Ordem: Geist, Arial, DejaVu, padrão.
+ */
+@font-face {
+  font-family: 'Geist Fallback Arial';
+  src: local('Arial');
+  size-adjust: 104.76%;
+  ascent-override: 95.94%;
+  descent-override: 28.16%;
+  line-gap-override: 0%;
+}
+
+@font-face {
+  font-family: 'Geist Fallback DejaVu';
+  src: local('DejaVu Sans');
+  size-adjust: 90.8%;
+}
+
+@font-face {
+  font-family: 'Geist Mono Fallback Courier';
+  src: local('Courier New');
+  size-adjust: 99.98%;
+  ascent-override: 100.52%;
+  descent-override: 29.5%;
+  line-gap-override: 0%;
+}
+
+@font-face {
+  font-family: 'Geist Mono Fallback DejaVu';
+  src: local('DejaVu Sans Mono');
+  size-adjust: 99.6%;
+}
+
+/*
+ * Tokens de cor. :root é o tema claro; .dark (classe no <html>) é o escuro.
+ * Os valores são canais RGB para o Tailwind aplicar opacidade.
+ * Contraste: fg/bg e accent/bg atendem AA nos dois temas.
+ */
 @layer base {
-  /*
-   * Tokens semânticos de tema. .dark replica 1:1 a paleta escura original
-   * (zero regressão visual no dark mode); :root define a paleta clara.
-   * accent (DEFAULT) é a cor de marca e fica fixa nos dois temas —
-   * accent-2/3 e brand-* variam de tom para manter contraste AA em fundo claro.
-   */
   :root {
-    --bg: 244 244 249;
-    --bg-2: 248 248 252;
-    --bg-3: 255 255 255;
-    --text-1: 21 21 31;
-    --text-2: 82 82 95;
-    --text-3: 107 107 120;
-    --border: rgba(108, 99, 255, 0.22);
-    --border-subtle: rgba(20, 20, 31, 0.08);
-    --overlay: 20 20 31;
-    --accent-2: 109 40 217;
-    --accent-3: 3 105 161;
-    --brand-green: 4 120 87;
-    --brand-pink: 190 24 93;
-    --brand-amber: 180 83 9;
-    --shadow-elevated: 0 1px 2px rgba(20, 20, 31, 0.04), 0 8px 24px rgba(20, 20, 31, 0.06);
+    --bg: 250 250 250;
+    --surface: 255 255 255;
+    --border: 228 228 231;
+    --fg: 10 10 11;
+    --muted: 82 82 91;
+    --subtle: 113 113 122;
+    --accent: 126 34 206;
     color-scheme: light;
   }
 
   .dark {
-    --bg: 10 10 15;
-    --bg-2: 17 17 24;
-    --bg-3: 24 24 31;
-    --text-1: 240 240 248;
-    --text-2: 144 144 170;
-    --text-3: 130 130 154;
-    --border: rgba(108, 99, 255, 0.18);
-    --border-subtle: rgba(240, 240, 248, 0.07);
-    --overlay: 255 255 255;
-    --accent-2: 167 139 250;
-    --accent-3: 56 189 248;
-    --brand-green: 52 211 153;
-    --brand-pink: 244 114 182;
-    --brand-amber: 251 191 36;
-    --shadow-elevated: none;
+    --bg: 10 10 11;
+    --surface: 17 17 19;
+    --border: 31 31 34;
+    --fg: 237 237 237;
+    --muted: 138 138 143;
+    --subtle: 124 124 129;
+    --accent: 192 132 252;
     color-scheme: dark;
   }
 
   html {
+    -webkit-text-size-adjust: 100%;
     scroll-behavior: smooth;
   }
+
   body {
-    @apply bg-bg text-text-1 font-dm overflow-x-hidden;
+    @apply bg-bg font-sans text-fg antialiased;
   }
-  /* Transição suave de tema — cobre elementos sem transition-* próprio. */
-  *, *::before, *::after {
-    transition-property: background-color, border-color, color, fill, stroke, box-shadow;
-    transition-duration: 200ms;
-    transition-timing-function: ease;
-  }
+
   :focus-visible {
-    @apply outline outline-2 outline-offset-2 outline-accent-2 rounded-sm;
+    outline: 2px solid rgb(var(--accent));
+    outline-offset: 3px;
+    border-radius: 2px;
   }
-  /* Scrollbar */
-  ::-webkit-scrollbar { width: 6px; }
-  ::-webkit-scrollbar-track { @apply bg-bg-2; }
-  ::-webkit-scrollbar-thumb { @apply bg-accent/40 rounded-full; }
-  ::-webkit-scrollbar-thumb:hover { @apply bg-accent/70; }
+
+  /* Entrada ao rolar: só quando o JS marcou a página (html.js) */
+  html.js .reveal {
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity 350ms ease-out, transform 350ms ease-out;
+  }
+  html.js .reveal.is-in {
+    opacity: 1;
+    transform: none;
+  }
+
+  /* Sem animações: respeita a preferência do sistema */
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      transition-duration: 0.01ms !important;
+      animation-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+    html.js .reveal {
+      opacity: 1;
+      transform: none;
+    }
+  }
 }
 
 @layer components {
-  /* Noise texture overlay */
-  .noise-overlay {
-    position: fixed;
-    inset: 0;
-    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
-    pointer-events: none;
-    z-index: 0;
-    opacity: 0.4;
+  .btn {
+    @apply inline-flex items-center gap-2 rounded-md border border-border px-4 py-2 text-sm font-medium text-fg transition-[color,border-color,background-color,transform] duration-200 hover:border-accent hover:text-accent active:translate-y-px;
   }
 
-  /* ── Section label (eyebrow) ── */
-  .section-label {
-    @apply font-syne text-xs font-semibold tracking-[3px] uppercase text-accent-2 mb-3;
+  .btn-primary {
+    background-image: linear-gradient(90deg, #C084FC, #F472B6);
+    border-color: transparent;
+    color: #0A0A0B;
+  }
+  .btn-primary:hover {
+    color: #0A0A0B;
+    filter: brightness(1.06);
   }
 
-  /* Elevação de card — no dark o contraste natural do fundo já resolve;
-     no light, sem esse contraste, uma sombra suave separa o card da página. */
-  .card-surface {
-    box-shadow: var(--shadow-elevated);
+  /* Tag de status "produto": mesmo degradê, texto escuro */
+  .tag-gradient {
+    background-image: linear-gradient(90deg, #C084FC, #F472B6);
+    color: #0A0A0B;
   }
 
-  /*
-   * ── Section title ──
-   * Antes: tracking-tight + extrabold deixava os títulos grandes
-   * "esmagados": letras coladas sem respiração.
-   * Fix: tracking levemente negativo (-0.02em) em vez de -0.05em,
-   * e font-bold (700) em vez de extrabold (800) nos títulos de seção.
-   * O hero h1 continua extrabold/tight pois é display puro,
-   * mas os títulos de seção (32–48px) precisam de mais espaço.
-   */
-  .section-title {
-    @apply font-syne font-bold leading-[1.15] mb-4;
-    font-size: clamp(32px, 4vw, 48px);
-    letter-spacing: -0.02em;
+  .link {
+    @apply text-accent underline underline-offset-4 decoration-accent/40 hover:decoration-accent;
   }
-
-  /* Skill tag */
-  .skill-tag {
-    @apply px-3 py-1.5 rounded-full text-[13px] font-normal transition-all duration-200 border;
-  }
-
-  /* Timeline bullet */
-  .timeline-point::before {
-    content: '▸';
-    @apply text-accent text-xs shrink-0 mt-[3px];
-  }
-
-  /* Code card dots (mantidos caso ainda usados em algum lugar) */
-  .code-dot-r { @apply w-2.5 h-2.5 rounded-full bg-[#ff5f56]; }
-  .code-dot-y { @apply w-2.5 h-2.5 rounded-full bg-[#ffbd2e]; }
-  .code-dot-g { @apply w-2.5 h-2.5 rounded-full bg-[#27c93f]; }
-}
-
-@layer utilities {
-  .text-balance { text-wrap: balance; }
-  .font-light-300 { font-weight: 300; }
 }

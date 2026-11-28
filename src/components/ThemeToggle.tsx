@@ -1,18 +1,22 @@
 import { Moon, Sun } from 'lucide-react'
+import type { Lang } from '@/data/types'
+import { messages } from '@/data'
 import { useTheme } from '@/hooks/useTheme'
 
-export function ThemeToggle() {
+export function ThemeToggle({ lang }: { lang: Lang }) {
   const { theme, toggleTheme } = useTheme()
+  const t = messages[lang].nav
+  const label = theme === 'dark' ? t.themeToLight : t.themeToDark
 
   return (
     <button
       type="button"
       onClick={toggleTheme}
-      aria-label={theme === 'dark' ? 'Ativar tema claro' : 'Ativar tema escuro'}
-      title={theme === 'dark' ? 'Tema claro' : 'Tema escuro'}
-      className="w-9 h-9 flex items-center justify-center rounded-lg border border-border-subtle text-text-2 hover:text-accent-2 hover:border-accent transition-all duration-200 shrink-0 bg-transparent cursor-pointer"
+      aria-label={label}
+      title={label}
+      className="flex h-9 w-9 items-center justify-center rounded-md border border-border text-muted transition-colors hover:border-accent hover:text-accent"
     >
-      {theme === 'dark' ? <Sun size={16} /> : <Moon size={16} />}
+      {theme === 'dark' ? <Sun size={16} aria-hidden="true" /> : <Moon size={16} aria-hidden="true" />}
     </button>
   )
 }

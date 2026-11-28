@@ -31,3 +31,6 @@ Thumbs.db
 
 # Types gerados
 *.tsbuildinfo
+
+# Claude Code local
+.claude/
