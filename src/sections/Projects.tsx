@@ -1,0 +1,20 @@
+import type { Lang } from '@/data/types'
+import { messages } from '@/data'
+import { SectionTitle } from '@/components/SectionTitle'
+import { ProjectCard } from '@/components/ProjectCard'
+
+export function Projects({ lang }: { lang: Lang }) {
+  const t = messages[lang].projects
+
+  return (
+    <section id="projetos" aria-labelledby="projetos-titulo" className="mx-auto max-w-content px-4 py-20 md:px-6">
+      <SectionTitle id="projetos-titulo">{t.title}</SectionTitle>
+      <p className="mt-4 max-w-2xl text-muted">{t.intro}</p>
+      <div className="mt-10">
+        {t.items.map((project) => (
+          <ProjectCard key={project.slug} project={project} lang={lang} />
+        ))}
+      </div>
+    </section>
+  )
+}

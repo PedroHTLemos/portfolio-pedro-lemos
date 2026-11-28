@@ -10,10 +10,10 @@ export function Navbar({ lang }: { lang: Lang }) {
   const home = lang === 'pt' ? '/' : '/en'
 
   const anchors = [
+    { id: 'sobre', label: t.nav.about },
     { id: 'projetos', label: t.nav.projects },
     { id: 'experiencia', label: t.nav.experience },
     { id: 'stack', label: t.nav.stack },
-    { id: 'sobre', label: t.nav.about },
     { id: 'contato', label: t.nav.contact },
   ]
 
