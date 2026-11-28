@@ -88,7 +88,7 @@ export function CaseStudyPage({ lang }: { lang: Lang }) {
           <ol className="mt-6 space-y-8">
             {cs.decisions.map((d, i) => (
               <li key={d.title} className="grid gap-2 md:grid-cols-[48px_minmax(0,1fr)]">
-                <span className="font-sans tracking-[-0.03em] text-lg text-accent" aria-hidden="true">
+                <span className="font-mono text-base text-accent" aria-hidden="true">
                   {String(i + 1).padStart(2, '0')}
                 </span>
                 <div>
@@ -105,7 +105,7 @@ export function CaseStudyPage({ lang }: { lang: Lang }) {
           <ul className="mt-6 divide-y divide-border border-y border-border">
             {cs.numbers.map((n) => (
               <li key={n.label} className="grid gap-2 py-5 md:grid-cols-[180px_minmax(0,1fr)_auto] md:items-baseline md:gap-6">
-                <span className="font-sans tracking-[-0.03em] text-2xl font-semibold text-fg">{n.value}</span>
+                <span className="font-mono text-3xl font-semibold tracking-tight text-accent">{n.value}</span>
                 <span className="text-muted">{n.label}</span>
                 <ExternalLink href={n.sourceHref} lang={lang} className="link text-sm">
                   {n.sourceLabel}
@@ -128,7 +128,7 @@ export function CaseStudyPage({ lang }: { lang: Lang }) {
                     height={900}
                     loading="lazy"
                     decoding="async"
-                    className="w-full rounded-md border border-border"
+                    className="w-full rounded-lg border border-border"
                   />
                   <figcaption className="mt-3 text-sm text-muted">{ev.caption}</figcaption>
                 </figure>
