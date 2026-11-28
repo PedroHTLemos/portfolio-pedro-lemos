@@ -44,6 +44,8 @@ export const en: Messages = {
     ctaCv: 'Download CV',
     ctaGithub: 'GitHub',
     ctaLinkedin: 'LinkedIn',
+    available: 'Open to new opportunities',
+    highlightsTitle: 'Verified highlights',
   },
   about: {
     title: 'About',

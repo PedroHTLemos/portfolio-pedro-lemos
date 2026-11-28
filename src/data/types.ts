@@ -104,6 +104,8 @@ export interface Messages {
     ctaCv: string
     ctaGithub: string
     ctaLinkedin: string
+    available: string
+    highlightsTitle: string
   }
   about: {
     title: string

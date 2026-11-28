@@ -44,6 +44,8 @@ export const pt: Messages = {
     ctaCv: 'Baixar CV',
     ctaGithub: 'GitHub',
     ctaLinkedin: 'LinkedIn',
+    available: 'Disponível para novas oportunidades',
+    highlightsTitle: 'Destaques verificados',
   },
   about: {
     title: 'Sobre',
